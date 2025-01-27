@@ -1,0 +1,133 @@
+x	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+        h2{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to HTML Tutorial</h1>
+    <ul>
+        <li>
+            <a href="#aboutUs">About Us</a>
+        </li>
+        <li>
+            <a href="#Portfolio">Portfolio</a>
+        </li>
+        <li>
+            <a href="#contact">Contact Us</a>
+        </li>
+    </ul>
+
+    <div id="aboutUs">
+        <h2>About Us</h2>
+        <p>
+            Hello, I am <strong><u>Utsav Katharotiya</u></strong>. I am learning <q>HTML</q>. <i>This is fun exercise!</i><br>
+        </p>
+        <p>
+            This page includes most of the <strike>commonly</strike> used <abbr title="Hyper Text Markup Language">HTML</abbr> tags. <br><br>
+            <mark>Highlighted text</mark><br>
+            <del>Deleted text</del><br>
+            <ins>Inserted text</ins>
+        </p>
+        <blockquote cite="https://example.com">This is a blockquote.</blockquote>
+    </div>
+    <hr>
+
+    <div id="Portfolio">
+        <h2>Portfolio</h2>
+        <p>Here are some of my projects: </p>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Project Description</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Project 1</td>
+                <td>This is a simple HTML page</td>
+                <td>
+                    <a href="#">View Project</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Project 2</td>
+                <td>A Portfolio Website</td>
+                <td>
+                    <a href="#">View Project</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Media</h2>
+    <h3><b>Embedded Video</b></h3>
+    <video src="https://youtu.be/HcOc7P5BMi4?si=mEXSfxwmYGAnNRwj" controls></video>
+
+    <h3><b>Embedded Audio</b></h3>
+    <audio src="" controls></audio>
+
+    <div id="contact">
+        <h2>Contact Me</h2>
+        <form action="">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <label for="">Select a file: </label>
+                <input type="file">
+                
+                <label for="">Name: </label>
+                <input type="text" name="" id="" required placeholder="Enter your Name">
+                <br><br>
+                
+                <label for="">Email: </label>
+                <input type="text" name="" id="" required placeholder="Enter your Email">
+                <br><br>
+
+                <label for="">Volume (between 0 to 50): </label>
+                <input type="range" required>                  
+
+                <label for="">Date :</label>
+                <input type="date" max="2025-01-13">
+                <br><br>
+
+                <label for="">Date and Time: </label>
+                <input type="datetime-local">
+                <br><br>
+
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <optgroup label="North America">
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="uk">United Kingdom</option>
+                        <option value="fr">France</option>
+                    </optgroup>
+                </select>
+                <br><br>
+
+                <label for="">Message: </label>
+                <textarea rows="4" cols="50" required placeholder="Enter your message here"></textarea>
+                <br><br> 
+
+                <input type="checkbox">
+                <label for="">Subscribe to newsletter</label>
+                <br><br>
+
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </fieldset>
+            <p> &copy; 2025 Utsav Katharotiya. All rights reserved. </p>
+        </form>
+    </div>
+</body>
+</html>

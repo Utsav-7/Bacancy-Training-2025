@@ -1,0 +1,36 @@
+
+undefined --> Not known what is in the variable.
+null  --> known, But it is null value.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+var   --> Variable can be re-declared & updated. A global scope variable.
+let   --> Variable cannot be re-declared but can be updated. A block scope variable.
+const --> Variable cannot be re-declared or updated. A block scope variable. but we can update the key of object.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Camel Case --> fullName
+Snack Case --> full_name
+Capitalize --> FullName
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data types: 
+	Primitive Data types: Number, String, Boolean, Undefined, null, BigInt, Symbol
+	Non-Primitive data types: Object,   --> Collections of values
+				
+----------------------------------------------------------------------------------------------------------------------------------------------------
+--> When, we will add number with string, then the resultant will be string.
+
+==  --> Compare only values, if number is string at that time string convert into number and then compare. same as for !=
+===  --> Compare values as well as data types. same as for !==
+
+--> String is immutable in JS (Not Change, create new String)
+--> Array is mutable in JS    (Change in same array) 
+
+
+	
+
+
+
