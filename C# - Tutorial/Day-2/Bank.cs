@@ -13,18 +13,15 @@ namespace Day_2
 
         public UnsufficientBalanc(string message) : base(message) { }
 
-        // Constructor that accepts a custom message and inner exception
         public UnsufficientBalanc(string message, Exception inner) : base(message, inner) { }
     }
 
     public class Bank
     {
-        // Instance variables for username, password, and balance
         string username;
         private string password;
         int balance;
 
-        // Constructor to initialize username and balance
         public Bank(string username, int balance)
         {
             this.username = username;
@@ -64,8 +61,7 @@ namespace Day_2
             }
             catch (UnsufficientBalanc ex)
             {
-                // Handle the exception (for example, log it)
-                Console.WriteLine($"************** {ex.Message} **************");
+                Console.WriteLine($"******** {ex.Message} ********");
             }
         }
     }
