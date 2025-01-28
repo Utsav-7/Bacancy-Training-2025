@@ -75,7 +75,7 @@ namespace MySolution
             }
 
             Console.WriteLine("---------------------------------------------------------");
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

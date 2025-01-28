@@ -26,3 +26,18 @@ C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C#\Day-1\obj\Debug\net8.0\refin
 C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C#\Day-1\obj\Debug\net8.0\Solution.pdb
 C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C#\Day-1\obj\Debug\net8.0\Solution.genruntimeconfig.cache
 C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C#\Day-1\obj\Debug\net8.0\ref\Solution.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\bin\Debug\net8.0\Solution.exe
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\bin\Debug\net8.0\Solution.deps.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\bin\Debug\net8.0\Solution.runtimeconfig.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\bin\Debug\net8.0\Solution.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\bin\Debug\net8.0\Solution.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.AssemblyInfoInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.AssemblyInfo.cs
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.csproj.CoreCompileInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.sourcelink.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\refint\Solution.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\Solution.genruntimeconfig.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Day-1\obj\Debug\net8.0\ref\Solution.dll
