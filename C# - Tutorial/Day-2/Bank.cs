@@ -19,7 +19,6 @@ namespace Day_2
     public class Bank
     {
         string username;
-        private string password;
         int balance;
 
         public Bank(string username, int balance)

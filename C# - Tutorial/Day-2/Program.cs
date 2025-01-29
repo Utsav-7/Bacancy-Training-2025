@@ -1,5 +1,5 @@
 ﻿using System;
-using Day_2; // Make sure the Bank and UnsufficientBalanc classes are in this namespace
+using Day_2;
 
 class Program
 {
