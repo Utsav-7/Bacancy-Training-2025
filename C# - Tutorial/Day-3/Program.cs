@@ -35,12 +35,12 @@ namespace Solution
 
             Console.WriteLine("---------- Math's Operation ----------");
 
+            int num1 = 0;
+            int num2 = 0;
+
             // Perform Math Operations
             try
             {
-                int num1 = 0;
-                int num2 = 0;
-
                 Console.WriteLine("------------- Addition -------------");
                 Console.WriteLine("Enter a two seperated value: ");
                 num1 = Convert.ToInt32(Console.ReadLine());
@@ -59,6 +59,14 @@ namespace Solution
                 num2 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine($"Multiplication: {multiply(num1, num2)}");
 
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Invalid Input type :(");
+            }
+
+            try
+            {
                 Console.WriteLine("------------- Divison -------------");
                 Console.WriteLine("Enter a two seperated value: ");
                 num1 = Convert.ToInt32(Console.ReadLine());
@@ -71,7 +79,6 @@ namespace Solution
             }
 
 
-                
             // Perform String Operations 
             Console.WriteLine("---------- String Operations ----------");
             Console.Write("Enter a string: ");
