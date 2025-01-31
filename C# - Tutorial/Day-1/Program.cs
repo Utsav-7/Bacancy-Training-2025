@@ -14,25 +14,45 @@ namespace MySolution
             s.checkPairCombination();
         }
 
+
+
+        public static bool IsNumber(string str)
+        {
+            return int.TryParse(userInput);
+        }
+
+
         // method defination for check pair combination
         public void checkPairCombination()
         {
-            //Variable declaration
-            int num1;
-            int num2;
-            int num3;
 
-            // take first number from user
-            Console.Write("Enter a first number: ");
-            num1 = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                //Variable declaration
+                int num1;
+                int num2;
+                int num3;
 
-            // take second number from user 
-            Console.Write("Enter a second number: ");
-            num2 = Convert.ToInt32(Console.ReadLine());
+                // take first number from user
+                Console.Write("Enter a first number: ");
+                string num1 = Console.ReadLine());
 
-            // take third number from user
-            Console.Write("Enter a third number: ");
-            num3 = Convert.ToInt32(Console.ReadLine());
+                if (!IsNumber(num1))
+                {
+                    throw new Exception("Invalid Number is entered");
+                }
+
+                // take second number from user 
+                Console.Write("Enter a second number: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+
+                // take third number from user
+                Console.Write("Enter a third number: ");
+                num3 = Convert.ToInt32(Console.ReadLine());
+
+            }  
+            
+
 
             Console.WriteLine("---------------------------------------------------------");
             // calculation
