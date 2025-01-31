@@ -13,12 +13,14 @@ namespace Console_App_Project
     {
         public string name;
         public int age;
-        public string Class;
+        public int Class;
         public int roll_no;
         public string address;
 
         public student() { } 
-        public student(string name, int age, string Class, int roll_no, string address)
+
+        // initialize the variable using parameterized constructor
+        public student(string name, int age, int Class, int roll_no, string address)
         {
             this.name = name;
             this.age = age;
@@ -27,12 +29,14 @@ namespace Console_App_Project
             this.address = address;
         }
 
+        // get and set method update the variable
         public string updateName { get; set; }
         public int updateAge { get; set; }
-        public string updateClass { get; set; }
+        public int updateClass { get; set; }
         public int updateRollNo {  get; set; }
         public string updateAddress {  get; set; }
 
+        // used to print var object
         public override string ToString()
         {
             return $"Name: {name} | Age: {age} | Class: {Class} | Roll No: {roll_no} | Address: {address}";
@@ -42,8 +46,10 @@ namespace Console_App_Project
 
     public class Student
     {
+        // used to store students in hashset
         public static HashSet<student> students = new HashSet<student>();
 
+        // add method to add new records in hashset
         public static void AddNewStudent()
         {
             Console.Write("Enter student name: ");
@@ -51,18 +57,19 @@ namespace Console_App_Project
             Console.Write("Enter student age: ");
             int age = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student class: ");
-            string Class = Console.ReadLine();
+            int Class = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student roll no: ");
             int roll_no = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student address: ");
             string address = Console.ReadLine();
 
+            // create object and initialize using parameterized constructor
             student s = new student(name, age, Class, roll_no, address);
-
+            // add new object in hashset
             students.Add(s);
         }
 
-
+        // search student by name and roll no
         public static void SearchStudent()
         {
             Console.WriteLine("1. Search by name\n2. Search by Roll No\n3. exit.");
@@ -73,10 +80,14 @@ namespace Console_App_Project
                 case 1:
                     Console.Write("Enter Student name: ");
                     string name = Console.ReadLine();
+
+                    // call funtion to search record using name (also give multiple records)
                     StudentSearchByName(name);
                     break;
                 case 2:
                     Console.Write("Enter Student roll no: ");
+
+                    // call function to search record using roll no (it give only single record)
                     int searchRollNo = Convert.ToInt32(Console.ReadLine());
                     StudentSearchByRollNo(searchRollNo);
                     break;
@@ -86,16 +97,17 @@ namespace Console_App_Project
                     Console.WriteLine("Invalid Choice....");
                     break;
 
-            }
+            }   
             Console.WriteLine("---------------------------------");
 
         }
 
-
+        // search record by name
         public static void StudentSearchByName(string name)
         {
             foreach (var item in students)
             {
+                // check given name is matched with object's name variable
                 if(item.name == name)
                 {
                     Console.WriteLine(item);
@@ -103,12 +115,15 @@ namespace Console_App_Project
             }
         }
 
+        // search record by roll no
         public static void StudentSearchByRollNo(int roll_no)
         {
+            // find the record using roll no
             var searchIndex = students.FirstOrDefault(s => s.roll_no == roll_no);
             Console.WriteLine(searchIndex);
         }
 
+        // update the student records stored in hashset
         public static void UpdateStudent(int roll_no)
         {
             Console.Write("Enter student name: ");
@@ -116,14 +131,16 @@ namespace Console_App_Project
             Console.Write("Enter student age: ");
             int age = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student class: ");
-            string Class = Console.ReadLine();
+            int Class = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student roll no: ");
             int rollNo = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter student address: ");
             string address = Console.ReadLine();
 
+            // find index of particular records by using roll no
             var updateIndex = students.FirstOrDefault(s => s.roll_no == roll_no);
 
+            // if index is not null then record is present in the set
             if (updateIndex != null)
             {
                 updateIndex.name = name;
@@ -144,13 +161,18 @@ namespace Console_App_Project
 
         }
 
+        // delete the record by using roll no
         public static void DeleteStudent(int roll_no)
         {
+            // find particular index that we will need to delete
             var removeIndex = students.FirstOrDefault(s => s.roll_no == roll_no);
 
+            // if index is not null then record is found
             if (removeIndex != null)
             {
                 Console.WriteLine("Hurrey! Student deleted from records...");
+
+                // remove record using index
                 students.Remove(removeIndex);
             }
             else
@@ -161,14 +183,17 @@ namespace Console_App_Project
 
         }
 
+        // print all the records which are stored in hashset
         public static void ViewStudents()
         {
+            // if count is 0, hashset is empty
             if(students.Count == 0)
             {
                 Console.WriteLine("Sorry.... Student records is empty!");
             }
             else
             {
+                // iterate over the hashset and print record
                 foreach (student student in students)
                 {
                     Console.WriteLine($"Name: {student.name} | Age: {student.age} | Class: {student.Class} | Roll No: {student.roll_no} | Address: {student.address}");
