@@ -1,0 +1,15 @@
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.AssemblyInfoInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.AssemblyInfo.cs
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.csproj.CoreCompileInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.sourcelink.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\bin\Debug\net8.0\Console_App_Project.exe
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\bin\Debug\net8.0\Console_App_Project.deps.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\bin\Debug\net8.0\Console_App_Project.runtimeconfig.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\bin\Debug\net8.0\Console_App_Project.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\bin\Debug\net8.0\Console_App_Project.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\refint\Console_App_Project.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\Console_App_Project.genruntimeconfig.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\Console_App_Project\obj\Debug\net8.0\ref\Console_App_Project.dll
