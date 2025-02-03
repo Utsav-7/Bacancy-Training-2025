@@ -17,7 +17,7 @@ namespace Console_App_Project
         public int roll_no;
         public string address;
 
-        public student() { } 
+        public student() { }
 
         // initialize the variable using parameterized constructor
         public student(string name, int age, int Class, int roll_no, string address)
@@ -33,8 +33,8 @@ namespace Console_App_Project
         public string updateName { get; set; }
         public int updateAge { get; set; }
         public int updateClass { get; set; }
-        public int updateRollNo {  get; set; }
-        public string updateAddress {  get; set; }
+        public int updateRollNo { get; set; }
+        public string updateAddress { get; set; }
 
         // used to print var object
         public override string ToString()
@@ -46,8 +46,25 @@ namespace Console_App_Project
 
     public class Student
     {
+
+
+
         // used to store students in hashset
         public static HashSet<student> students = new HashSet<student>();
+
+        // add data for initial records
+        static Student(){
+            students.Add(new student("Utsav", 21, 1, 43, "Surat"));
+            students.Add(new student("Jay", 20, 1, 40, "Ahmedabad"));
+            students.Add(new student("Ram", 22, 2, 32, "Baroda"));
+            students.Add(new student("Mehul", 19, 3, 49, "Rajkot"));
+            students.Add(new student("Rakesh", 29, 3, 90, "Surat"));
+            students.Add(new student("Priya", 21, 2, 55, "Vadodara"));
+            students.Add(new student("Amit", 23, 4, 25, "Surat"));
+            students.Add(new student("Neha", 20, 1, 78, "Ahmedabad"));
+            students.Add(new student("Rohan", 22, 2, 66, "Gandhinagar"));
+            students.Add(new student("Kiran", 24, 4, 88, "Bhavnagar"));
+        }
 
         // add method to add new records in hashset
         public static void AddNewStudent()

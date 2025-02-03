@@ -34,7 +34,6 @@ namespace Console_App_Project
 
                         // take user input to perform particular tasks
                         Console.Write("Enter your choice: ");
-                        innerChoice = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
                         switch (innerChoice)
@@ -133,7 +132,7 @@ namespace Console_App_Project
                     {
                         int innerChoice = 0;
                         // print options
-                        Console.WriteLine("1. Create a new class\n2. View all classes\n3. exit.");
+                        Console.WriteLine("1. Create a new class\n2. View all classes\n3. Assigned Student\n4. exit.");
                         Console.Write("Enter your choice: ");
                         innerChoice = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -150,6 +149,9 @@ namespace Console_App_Project
                                 ClassFunc.ViewAllClasses();
                                 break;
                             case 3:
+                                ClassFunc.AssignedStudent();
+                                break;
+                            case 4:
                                 break;
                             default:
                                 Console.WriteLine("Invalid Choice... :( ");

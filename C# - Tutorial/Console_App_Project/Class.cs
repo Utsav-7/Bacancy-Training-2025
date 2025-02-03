@@ -24,7 +24,7 @@ namespace Console_App_Project
         }
     }
 
-    public class ClassFunc
+    public class ClassFunc : Student
     {
         // hashset is used to store the class object
         public static HashSet<Class> classes = new HashSet<Class>();
@@ -62,6 +62,21 @@ namespace Console_App_Project
                 }
             }
             
+        }
+
+        // to display all the assigned students in particular class
+        public static void AssignedStudent()
+        {
+            var assignedStudent = students.GroupBy(s => s.Class);
+            foreach (var item in assignedStudent)
+            {
+                Console.WriteLine($"Class: {item.Key}"); // Group key (Class)
+
+                foreach (var student in item)
+                {
+                    Console.WriteLine($"  - Student: {student.name}"); // Print student details
+                }
+            }
         }
 
 
