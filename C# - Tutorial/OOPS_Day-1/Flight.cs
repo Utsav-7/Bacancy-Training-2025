@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace OOPS_Day_1
 {
     public class Flight
     {
         // fields
         private static int _flightID = 100;
-        public string destination;
+        private string _destination;
         private int _seatAvailable = 100;
 
         // parameterized constructor to initialize flight destination
@@ -22,25 +17,21 @@ namespace OOPS_Day_1
                 bool isOnlyLetters = destination.All(c => char.IsLetter(c));
                 if (isOnlyLetters)
                 {
-                    this.destination = destination;
+                    this._destination = destination;
                     _seatAvailable = 100;
                     _flightID++;
                 }
                 else
-                    throw new Exception("Invalid Destination"); // throw error if string contain numbers
+                    throw new Exception("Invalid Destination");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-
         }
 
-        // get available seat details 
         public int GetSeatAvailable()
         {
             return _seatAvailable;
         }
 
-
-        // used to set no seat availability 
         public void BookSeat(int seat)
         {
             if (seat > 0 && seat <= 100)
@@ -57,18 +48,16 @@ namespace OOPS_Day_1
             }
         }
 
-        // get all the required flight details
         public void GetBookingDetails()
         {
             Console.WriteLine($"--> Flight ID: {_flightID}");
-            Console.WriteLine($"--> Destination: {destination}");
+            Console.WriteLine($"--> Destination: {_destination}");
             Console.WriteLine($"--> Seats Booked: {100 - _seatAvailable}");
             Console.WriteLine($"Currently, Available Seats: {_seatAvailable}");
             Console.WriteLine("----------------------------------------");
 
         }
 
-        // Destructor called at the end of programm
         ~Flight()
         {
             Console.WriteLine("Flight is removed SUCCESSFULLY........");
