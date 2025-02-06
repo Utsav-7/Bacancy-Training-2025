@@ -1,4 +1,4 @@
-# OOPS Day - 1 : Flight Reservation System
+# OOPS Day - 2 : Flight Reservation System
 ## Problem Statement:
 ### Inheritance (Base & Derived Classes, base Keyword, Method Overriding)
 - Create a base class Transport with common attributes (TransportID, Destination).
