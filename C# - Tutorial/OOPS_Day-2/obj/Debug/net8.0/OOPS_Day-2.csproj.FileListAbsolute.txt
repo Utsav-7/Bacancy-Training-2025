@@ -1,0 +1,15 @@
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.AssemblyInfoInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.AssemblyInfo.cs
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.csproj.CoreCompileInputs.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.sourcelink.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\bin\Debug\net8.0\OOPS_Day-2.exe
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\bin\Debug\net8.0\OOPS_Day-2.deps.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\bin\Debug\net8.0\OOPS_Day-2.runtimeconfig.json
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\bin\Debug\net8.0\OOPS_Day-2.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\bin\Debug\net8.0\OOPS_Day-2.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\refint\OOPS_Day-2.dll
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.pdb
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\OOPS_Day-2.genruntimeconfig.cache
+C:\Users\utsav\OneDrive\Desktop\Bacancy-Training\C# - Tutorial\OOPS_Day-2\obj\Debug\net8.0\ref\OOPS_Day-2.dll
