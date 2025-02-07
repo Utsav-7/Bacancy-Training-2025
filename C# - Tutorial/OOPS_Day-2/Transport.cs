@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 /*
  * In this file,
  * I have created a class Transport which is inherit in Flight and PrivateJet class
- * I have also created Flight class which is inherit Transport class and implement IBookingSystem interface
- * Partial class FlightOperations is also created which has 2 methods UpdateSeats() and DisplayFlight()
  */
 
 namespace OOPS_Day_2
@@ -118,18 +116,6 @@ namespace OOPS_Day_2
         {
             Console.WriteLine($"Private Jet ID: {_jetID}");
             Console.WriteLine($"No of Seats: {100 - _totalSeats}");
-        }
-    }
-
-    partial class FlightOperations
-    {
-        public void UpdateSeats()
-        {
-            Console.WriteLine("Update Seats in Partial Class");
-        }
-        public void DisplayFlight()
-        {
-            Console.WriteLine("Display Flight in Partial Class");
         }
     }
 }
