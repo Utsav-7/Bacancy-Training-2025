@@ -6,9 +6,11 @@ namespace OOPS_Day_3
     {
         public static void Main(string[] args)
         {
-            Employee employee = new Employee("John", 1000);
-            employee.CalculateSalary();
-            employee.GenerateReport();
+            int salary = 1000;
+            string name = "John";
+            Employee employee = new Employee(name,salary);
+            GenerateReport report = new GenerateReport();   
+            report.PrintReports(name, salary);
         }
     }
 }

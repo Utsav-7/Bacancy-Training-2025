@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace OOPS_Day_3
 {
-    interface ICalculateSalary
+    class CalculateSalary
     {
         public static double Calculate(double employeeSalary)
         {
@@ -21,26 +21,17 @@ namespace OOPS_Day_3
         }
     }
 
-    internal class GenerateReport : ICalculateSalary
+    class GenerateReport : CalculateSalary
     {
-        private string employeeName;
-        private double employeeSalary;
 
-        public GenerateReport(string name, double salary)
+        public void PrintReports(string name, double salary )
         {
-            this.employeeName = name;
-            this.employeeSalary = salary;
+            Console.WriteLine("Employee: " + name);
+            Console.WriteLine("Salary After bonus:" + Calculate(salary));
         }
-
-        public void PrintReports()
-        {
-            Console.WriteLine("Employee: " + employeeName);
-            Console.WriteLine("Salary After bonus:" + ICalculateSalary.Calculate(employeeSalary));
-        }
-
     }
 
-    class Employee : ICalculateSalary
+    class Employee
     {
         private string employeeName;
         private double employeeSalary;
@@ -48,17 +39,6 @@ namespace OOPS_Day_3
         {
             this.employeeName = name;
             this.employeeSalary = salary;
-        }
-
-        public void CalculateSalary()
-        {
-            Console.WriteLine("Salary: " + ICalculateSalary.Calculate(employeeSalary));
-        }
-
-        public void GenerateReport()
-        {
-            GenerateReport generateReport = new GenerateReport(employeeName, employeeSalary);
-            generateReport.PrintReports();
         }
     }
 }
