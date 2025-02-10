@@ -16,7 +16,7 @@ namespace OOPS_Day_2
             while (true)
             {
                 Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("1. Flight Booking\n2. Private Jet Booking\n3. Flight Manager\n4. Sealed Class Access\n5. Partial Class Access\n6. Exit.");
+                Console.WriteLine("1. Flight Booking\n2. Private Jet Booking\n3. Flight Manager\n5. Partial Class Access\n6. Exit.");
                 int choice = 0;
                 Console.Write("Enter your choice: ");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -37,6 +37,8 @@ namespace OOPS_Day_2
                             string name = Console.ReadLine();
                             flight.BookSeat(seats, name);
                             flight.ConfirmBooking();
+                            ReservationDatabase db = new ReservationDatabase();
+                            db.SaveReservation(flight.flightID, name);
                         }
                         catch(FormatException ex)
                         {
@@ -92,7 +94,7 @@ namespace OOPS_Day_2
                             Console.Write("Enter Passenger Name: ");
                             string passengerName = Console.ReadLine();
                             Console.Write("Enter Flight ID: ");
-                            int flightId = Convert.ToInt32(Console.ReadLine());
+                            string flightId = Console.ReadLine();
                             ReservationDatabase db = new ReservationDatabase();
                             db.SaveReservation(flightId, passengerName);
                         }

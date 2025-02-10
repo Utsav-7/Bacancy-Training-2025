@@ -34,6 +34,13 @@ namespace OOPS_Day_2
         private string _flightID;
         private int _totalSeats = 500;
 
+        public string flightID {
+            get
+            {
+                return _flightID;
+            } 
+        }
+
         public Flight(string dest) : base(dest)
         {
             _flightID = "FL" + new Random().Next(1000, 9999);
