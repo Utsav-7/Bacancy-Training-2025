@@ -20,11 +20,11 @@
     - Get the director(s) with the most movies directed.
 
 ## Output:
-![Screenshot 2025-02-11 151058](https://github.com/user-attachments/assets/a342e4a5-5f46-42bb-a56d-2c3991487b54)
-![Screenshot 2025-02-11 151109](https://github.com/user-attachments/assets/4d0a2e49-3677-481b-9d03-b345b578e3db)
-![Screenshot 2025-02-11 151118](https://github.com/user-attachments/assets/b871b3bb-c2d5-43b0-bad1-76b09a0c4a3f)
-![Screenshot 2025-02-11 151127](https://github.com/user-attachments/assets/b0b939eb-2f48-4081-997d-6215e57dce66)
-![Screenshot 2025-02-11 151137](https://github.com/user-attachments/assets/4b292455-c71f-4e37-9241-36a6263f8a31)
-![Screenshot 2025-02-11 151148](https://github.com/user-attachments/assets/e65236e5-286f-4803-a992-d74bc218683b)
-![Screenshot 2025-02-11 151157](https://github.com/user-attachments/assets/1b8f63a7-e909-4cdf-a6fd-d4a560d90b15)
-![Screenshot 2025-02-11 151206](https://github.com/user-attachments/assets/5faa9e72-7263-4420-8fff-3665cf04a6e5)
+![Screenshot 2025-02-11 180223](https://github.com/user-attachments/assets/d4eb5345-c297-4972-a972-b827ad4f6267)
+![Screenshot 2025-02-11 180245](https://github.com/user-attachments/assets/ec47e483-3976-4338-b611-cb0966fcca51)
+![Screenshot 2025-02-11 180328](https://github.com/user-attachments/assets/5f1576a9-5cd0-4d62-8945-9c946eae9414)
+![Screenshot 2025-02-11 180350](https://github.com/user-attachments/assets/d61e9b28-872d-462a-9af0-17d95fdcc86b)
+![Screenshot 2025-02-11 180406](https://github.com/user-attachments/assets/4761dfac-1ac8-408a-924e-09d01ed9f3ce)
+![Screenshot 2025-02-11 180420](https://github.com/user-attachments/assets/67734fa4-d9f0-4470-a4a6-0f0938a4be16)
+![Screenshot 2025-02-11 180436](https://github.com/user-attachments/assets/c0508bef-db74-4b9a-8538-eb5e742ba93f)
+![Screenshot 2025-02-11 180446](https://github.com/user-attachments/assets/426f474a-cd35-4cfc-87a4-7f95f0263829)
