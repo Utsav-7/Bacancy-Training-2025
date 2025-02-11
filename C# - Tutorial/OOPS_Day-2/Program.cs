@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace OOPS_Day_2
 {
@@ -16,10 +17,10 @@ namespace OOPS_Day_2
             while (true)
             {
                 Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("1. Flight Booking\n2. Private Jet Booking\n3. Flight Manager\n5. Partial Class Access\n6. Exit.");
+                Console.WriteLine("1. Flight Booking\n2. Private Jet Booking\n3. Flight Manager\n4. Partial Class Access\n5. Exit.");
                 int choice = 0;
                 Console.Write("Enter your choice: ");
-                choice = Convert.ToInt32(Console.ReadLine());
+                schoice = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("---------------------------------------------");
 
                 switch (choice)
@@ -58,7 +59,10 @@ namespace OOPS_Day_2
                             Console.Write("Enter Passenger Name: ");
                             string pasName = Console.ReadLine();
                             jet.BookSeat(seat, pasName);
-                        }catch(FormatException ex)
+                            ReservationDatabase db = new ReservationDatabase();
+                            db.SaveReservation(jet.jetID, pasName);
+                        }
+                        catch(FormatException ex)
                         {
                             Console.WriteLine("Invalid Input. Please try again.");
                         }
@@ -90,23 +94,6 @@ namespace OOPS_Day_2
                     case 4:
                         try
                         {
-                            Console.Write("\t----- Sealed Class Access -----\n");
-                            Console.Write("Enter Passenger Name: ");
-                            string passengerName = Console.ReadLine();
-                            Console.Write("Enter Flight ID: ");
-                            string flightId = Console.ReadLine();
-                            ReservationDatabase db = new ReservationDatabase();
-                            db.SaveReservation(flightId, passengerName);
-                        }
-                        catch(FormatException ex)
-                        {
-                            Console.WriteLine("Invalid Input. Please try again.");
-                        }
-                        break;
-
-                    case 5:
-                        try
-                        {
                             Console.Write("\t----- Partial Class Access -----\n");
                             FlightOperations operations = new FlightOperations();
                             operations.BookTicket();
@@ -119,7 +106,7 @@ namespace OOPS_Day_2
                             Console.WriteLine("Invalid Input. Please try again.");
                         }
                         break;
-                    case 6:
+                    case 5:
                         Console.WriteLine("Exiting the system...");
                         Environment.Exit(0);
                         break;

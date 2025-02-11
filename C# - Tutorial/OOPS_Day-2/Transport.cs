@@ -89,6 +89,14 @@ namespace OOPS_Day_2
         private string _jetID;
         private int _totalSeats = 100;
 
+        public string jetID
+        {
+            get
+            {
+                return _jetID;
+            }
+        }
+
         public PrivateJet(string dest) : base(dest)
         {
             _jetID = TransportID = "JT" + (_counter++);
