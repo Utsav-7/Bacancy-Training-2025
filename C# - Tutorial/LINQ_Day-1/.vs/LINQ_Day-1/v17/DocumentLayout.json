@@ -39,8 +39,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T05:49:08.376Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -56,8 +55,7 @@
               "RelativeToolTip": "Movie.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAAwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T06:16:03.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T06:16:03.687Z"
             },
             {
               "$type": "Document",
@@ -69,8 +67,7 @@
               "RelativeToolTip": "QueriesMethodSyntax.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T08:26:09.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T08:26:09.311Z"
             },
             {
               "$type": "Document",
@@ -80,7 +77,7 @@
               "RelativeDocumentMoniker": "QuerySyntax.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-1\\QuerySyntax.cs",
               "RelativeToolTip": "QuerySyntax.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAA8wHUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwHUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T09:46:42.84Z",
               "EditorCaption": ""
