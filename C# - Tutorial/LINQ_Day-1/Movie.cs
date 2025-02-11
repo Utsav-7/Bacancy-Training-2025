@@ -17,9 +17,8 @@ namespace LINQ_Day_1
 
         public static List<Movie> movieList = new List<Movie>();
 
-        public Movie()
-        {
-        }
+        public Movie(){}
+
         public Movie(int id, string title, string genre, double? rating, List<string> directors)
         {
             Id = id;
