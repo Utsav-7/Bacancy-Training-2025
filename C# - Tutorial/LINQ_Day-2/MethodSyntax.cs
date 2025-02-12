@@ -151,7 +151,7 @@ namespace LINQ_Day_2
             }
         }
 
-        public void DifferenceBetweenImmediateAndDeffered(List<Book> bookList, List<BorrowRecord> borrowRecords)
+        public void DifferenceBetweenImmediateAndDeffered(List<Book> bookList)
         {
             var immediate = bookList.Select(b => b.Title).ToList();
             var deffered = bookList.Select(b => b.Title);
@@ -162,8 +162,6 @@ namespace LINQ_Day_2
             foreach (var item in immediate)
             {
                 Console.WriteLine($" Title: {item}");
-
-
             }
 
             Console.WriteLine("---- Deffered Execution ----");

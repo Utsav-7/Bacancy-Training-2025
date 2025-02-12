@@ -48,6 +48,5 @@ namespace LINQ_Day_2
             BorrowRecord.IntializeBorrowRecord();
             return borrowRecordList;
         }
-
     }
 }
