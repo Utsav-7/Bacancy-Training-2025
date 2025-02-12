@@ -16,7 +16,7 @@ namespace LINQ_Day_1
 
             Console.WriteLine("******************************************************************");
 
-            QueriesMethodSyntax methodSyntax = new QueriesMethodSyntax();
+            MethodSyntax methodSyntax = new MethodSyntax();
             QuerySyntax querySyntax = new QuerySyntax();
 
             // LINQ Query   

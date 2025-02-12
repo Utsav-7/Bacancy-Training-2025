@@ -24,7 +24,11 @@ namespace LINQ_Day_1
         {
             Console.WriteLine("----- Movies With Genres -----");
             var movies = from movie in movieList
-                         select new { movie.Title, movie.Genre };
+                         select new 
+                         { 
+                             movie.Title, 
+                             movie.Genre 
+                         };
             foreach(var i in movies)
             {
                 Console.WriteLine($"Title: {i.Title} | Genres: {i.Genre}");
@@ -36,7 +40,7 @@ namespace LINQ_Day_1
             Console.WriteLine("----- Get All Directors -----");
             var directorList = from movie in movieList
                                from director in movie.Directors
-                                select director;
+                               select director;
 
             foreach(var director in directorList)
             {
@@ -48,7 +52,11 @@ namespace LINQ_Day_1
         {
             var sortList = from movie in movieList
                            orderby movie.Rating descending, movie.Title descending
-                           select new { movie.Rating, movie.Title};
+                           select new 
+                           { 
+                               movie.Rating, 
+                               movie.Title
+                           };
             Console.WriteLine("----- Sort by Movie Rating -----");
 
             foreach (var i in sortList)
@@ -86,7 +94,7 @@ namespace LINQ_Day_1
 
         public void CountMoviesOfEachDirector(List<Movie> movieList)
         {
-            var countMovies = from movie in Movie.movieList
+            var countMovies = from movie in movieList
                               from director in movie.Directors 
                               group movie by director into directorGroup
                               select new
@@ -94,6 +102,7 @@ namespace LINQ_Day_1
                                   Director = directorGroup.Key,
                                   MovieCount = directorGroup.Count()
                               };
+
             Console.WriteLine("----- Movie Count By Director -----");
             foreach ( var movie in countMovies)
             {

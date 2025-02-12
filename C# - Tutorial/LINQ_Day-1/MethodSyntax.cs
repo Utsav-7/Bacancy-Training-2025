@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQ_Day_1
 {
-    internal class QueriesMethodSyntax
+    internal class MethodSyntax
     {
         public void GetMoviesWithRatingAbove8(List<Movie> movieList)
         {
@@ -94,7 +94,11 @@ namespace LINQ_Day_1
         {
             var directorCount = movieList.SelectMany(movie => movie.Directors)
                                         .GroupBy(director => director)
-                                        .Select(group => new { Director = group.Key, Count = group.Count() });
+                                        .Select(group => new 
+                                        { 
+                                            Director = group.Key, 
+                                            Count = group.Count() 
+                                        });
 
             Console.WriteLine("\n--- Count of movies directed by each director --- ");
             foreach (var director in directorCount)
@@ -107,7 +111,11 @@ namespace LINQ_Day_1
         {
             var directorCount = movieList.SelectMany(movie => movie.Directors)
                                          .GroupBy(director => director)
-                                         .Select(group => new { Director = group.Key, Count = group.Count() });
+                                         .Select(group => new 
+                                         { 
+                                             Director = group.Key, 
+                                             Count = group.Count() 
+                                         });
 
             var directorWithMostMovies = directorCount.OrderByDescending(director => director.Count).First();
 
