@@ -63,8 +63,6 @@ namespace LINQ_Day_2
             bookList2.Add(new Book(15, "The Road", "Post-Apocalyptic"));
         }
 
-
-
         public static List<Book> GetBookList1()
         {
             Book.Library1();
