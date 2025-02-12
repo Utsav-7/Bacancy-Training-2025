@@ -11,9 +11,10 @@ namespace LINQ_Day_2
     {
         public void ListWithBookBorrowRecords(List<Book> books, List<BorrowRecord> borrowRecords)
         {
+            // Left Join
             var leftJoin = from book in books
                            join records in borrowRecords on book.BookId equals records.BookId into recordGroup
-                           from newRecords in recordGroup.DefaultIfEmpty()
+                           from newRecords in recordGroup.DefaultIfEmpty() // also contain if null value is present
                            select new
                            {
                                BookTitle = book.Title,
@@ -27,6 +28,7 @@ namespace LINQ_Day_2
 
         public void GenerateDatasetWithPairs(List<Book> books, List<BorrowRecord> borrowRecords)
         {
+            // Cross Join
             var fullRecords = from book in books
                               from record in borrowRecords
                               select new
@@ -44,10 +46,11 @@ namespace LINQ_Day_2
 
         public void ModifyBookList(List<Book> books, List<BorrowRecord> borrowRecords)
         {
+            // Inner Join
             var innerJoin = from book in books
                             join record in borrowRecords
                             on book.BookId equals record.BookId into newRecords
-                            from record in newRecords
+                            from record in newRecords       // Not contain if null value is present
                             select new
                             {
                                 BookTitle = book.Title,
@@ -98,15 +101,6 @@ namespace LINQ_Day_2
             }
         }
 
-        public void UniqueGenreBookList(List<Book> books)
-        {
-            var uniqueGenre = books.Select(b => b.Genre).Distinct();
-            foreach (var genre in uniqueGenre)
-            {
-                Console.WriteLine($"Genre: {genre}");
-            }
-        }
-
         public void CombineUniqueCollection(List<Book> books1, List<Book> books2)
         {
             var combinedList = (from book1 in books1
@@ -126,6 +120,7 @@ namespace LINQ_Day_2
 
         public void GetSameBooksInBothCollections(List<Book> books1, List<Book> books2)
         {
+            // Join based on Book Title
             var sameBooks = (from book1 in books1
                             join book2 in books2
                             on book1.Title equals book2.Title into bookList

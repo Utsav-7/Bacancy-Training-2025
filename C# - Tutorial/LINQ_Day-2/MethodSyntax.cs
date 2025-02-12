@@ -10,6 +10,7 @@ namespace LINQ_Day_2
     {
         public void ListWithBookBorrowRecords(List<Book> bookList, List<BorrowRecord> borrowRecords)
         {
+            // Left Join
             var leftJoin = bookList.GroupJoin(borrowRecords,
                                     bl => bl.BookId,
                                     br => br.BookId,
@@ -35,6 +36,7 @@ namespace LINQ_Day_2
 
         public void ModifyBookList(List<Book> bookList, List<BorrowRecord> borrowRecords)
         {
+            // Inner Join
             var fullList = bookList.Join(borrowRecords,
                            bl => bl.BookId,
                            br => br.BookId,
@@ -55,6 +57,7 @@ namespace LINQ_Day_2
 
         public void CountTotalNumberOfBorrowedBooks(List<Book> bookList, List<BorrowRecord> borrowRecords)
         {
+            // Perform Left Join and Group by BookId
             var totalBorrowed = bookList.GroupJoin(borrowRecords,
                                 bl => bl.BookId,
                                 br => br.BookId,
@@ -71,7 +74,7 @@ namespace LINQ_Day_2
 
         public void BookListBorrowedMoreThen3(List<Book> bookList, List<BorrowRecord> borrowRecords)
         {
-            var specificList = BorrowRecord.borrowRecordList
+            var specificList = borrowRecords
                                .GroupBy(b => b.BookId)
                                .Where(g => g.Count() >= 3)
                                .Join(bookList,
@@ -88,7 +91,8 @@ namespace LINQ_Day_2
 
         public void GenerateDatasetWithPairs(List<Book> bookList, List<BorrowRecord> borrowRecords)
         {
-            var fullLIst = bookList.SelectMany(
+            // Cross Join
+            var fullList = bookList.SelectMany(
                             br => borrowRecords,
                             (br, borrow) => new
                             {
@@ -97,7 +101,7 @@ namespace LINQ_Day_2
                                 BorrowDate = borrow.BorrowDate
                             });
 
-            foreach (var item in fullLIst)
+            foreach (var item in fullList)
             {
                 Console.WriteLine($"Book Title: {item.BookTitle} | Borrower: {item.Borrower} | Borrow Date: {item.BorrowDate}");
             }
@@ -135,7 +139,9 @@ namespace LINQ_Day_2
 
         public void GetDifferentBooksInBothCollections(List<Book> bookList1, List<Book> bookList2)
         {
+            // A - B
             var differentBooks1 = bookList1.Except(bookList2);
+            // B - A
             var differentBooks2 = bookList2.Except(bookList1);
 
             Console.WriteLine("---- Books in BookList1 but not in BookList2 ----");
@@ -157,6 +163,7 @@ namespace LINQ_Day_2
             var deffered = bookList.Select(b => b.Title);
 
             Console.WriteLine("---- Immediate Execution ----");
+            // Add a new book to the list
             immediate.Add(new Book(101, "My Book", "Fiction").Title);
 
             foreach (var item in immediate)

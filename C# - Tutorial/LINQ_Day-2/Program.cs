@@ -43,7 +43,6 @@ namespace LINQ_Day_2
             Console.WriteLine("--------------------------------------------------------------------");
 
             // 7. Retrieve a list of unique genres available in the book collection.
-            querySyntax.UniqueGenreBookList(bookList1);
             methodSyntax.UniqueGenreBookList(bookList1);
             Console.WriteLine("--------------------------------------------------------------------");
 
