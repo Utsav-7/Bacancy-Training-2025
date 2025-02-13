@@ -1,6 +1,6 @@
 # LINQ Day - 2 
 ## Problem Statement: 
-- ![image](https://github.com/user-attachments/assets/54604bfd-ac71-4862-9560-18d2bc330257)
+![image](https://github.com/user-attachments/assets/54604bfd-ac71-4862-9560-18d2bc330257)
 - Write LINQ Queries(Using Method & Query syntax) to Solve the Following:
   - List all books and their corresponding borrow records, even if a book has never been borrowed.
   - Generate a dataset that pairs each book with every borrow record, regardless of any existing relationship.
