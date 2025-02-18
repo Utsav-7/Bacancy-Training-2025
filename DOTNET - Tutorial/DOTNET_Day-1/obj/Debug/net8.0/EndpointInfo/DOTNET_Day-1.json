@@ -149,6 +149,28 @@
           }
         }
       }
+    },
+    "/v2/PostWeather/{city}": {
+      "post": {
+        "tags": [
+          "Weather"
+        ],
+        "parameters": [
+          {
+            "name": "city",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

@@ -76,5 +76,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DOTNET_Day_1.Controllers.WeatherController",
+    "Method": "PostWeather",
+    "RelativePath": "v2/PostWeather/{city}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
