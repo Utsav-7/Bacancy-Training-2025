@@ -1,1 +1,2 @@
-﻿# Bacancy-Training-2025 : Full Stack Development
+﻿# Bacancy-Training-2025 : .Net Developement
+ 
