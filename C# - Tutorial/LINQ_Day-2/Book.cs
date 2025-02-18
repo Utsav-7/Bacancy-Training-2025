@@ -74,17 +74,5 @@ namespace LINQ_Day_2
             Book.Library2();
             return bookList2;
         }
-
-        public override bool Equals(object obj)
-        {
-            return obj is Book book &&
-                   Title == book.Title &&
-                   Genre == book.Genre;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Title, Genre);
-        }
     }
 }

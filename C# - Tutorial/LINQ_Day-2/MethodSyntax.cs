@@ -17,7 +17,7 @@ namespace LINQ_Day_2
                                     (bl, br) => new
                                     {
                                         BookTitle = bl.Title,
-                                        Borrower = br.DefaultIfEmpty()
+                                        Borrower = br.DefaultIfEmpty(),
                                     })
                                     .SelectMany(
                                         brleft => brleft.Borrower,
@@ -119,7 +119,7 @@ namespace LINQ_Day_2
 
         public void CombineUniqueCollection(List<Book> bookList1, List<Book> bookList2)
         {
-            var combinedList = bookList1.Union(bookList2).Distinct();
+            var combinedList = bookList1.Union(bookList2).DistinctBy(genre => genre.Genre).DistinctBy(Title => Title.Title);
 
             foreach (var item in combinedList)
             {

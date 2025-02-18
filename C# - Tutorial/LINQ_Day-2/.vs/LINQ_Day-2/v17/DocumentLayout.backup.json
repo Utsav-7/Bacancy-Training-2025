@@ -7,20 +7,23 @@
       "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:methodsyntax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\querysyntax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:querysyntax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training\\c# - tutorial\\linq_day-2\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EEA6AAB-A7D5-4249-AF47-8D1E1112F6CA}|LINQ_Day-2.csproj|solutionrelative:borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\utsav\\AppData\\Local\\SourceServer\\7d2247486edc8483f3ba3670822f7480ec7e0f43ac6359cb8d9dd85a426a179b\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +43,7 @@
         },
         {
           "DockedWidth": 2670,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,16 +51,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\Book.cs",
               "RelativeDocumentMoniker": "Book.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\Book.cs",
               "RelativeToolTip": "Book.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwFMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAUwFEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T05:33:06.507Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MethodSyntax.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\AppData\\Local\\SourceServer\\7d2247486edc8483f3ba3670822f7480ec7e0f43ac6359cb8d9dd85a426a179b\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\7d2247486edc8483f3ba3670822f7480ec7e0f43ac6359cb8d9dd85a426a179b\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs",
+              "ToolTip": "C:\\Users\\utsav\\AppData\\Local\\SourceServer\\7d2247486edc8483f3ba3670822f7480ec7e0f43ac6359cb8d9dd85a426a179b\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\7d2247486edc8483f3ba3670822f7480ec7e0f43ac6359cb8d9dd85a426a179b\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs [Read Only]",
+              "ViewState": "AgIAAJcAAAAAAAAAAAASwKIAAAAwAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T05:54:50.051Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BorrowRecord.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\BorrowRecord.cs",
+              "RelativeDocumentMoniker": "BorrowRecord.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\BorrowRecord.cs",
+              "RelativeToolTip": "BorrowRecord.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:44:33.827Z",
               "EditorCaption": ""
             },
             {
@@ -68,23 +97,10 @@
               "RelativeDocumentMoniker": "MethodSyntax.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\MethodSyntax.cs",
               "RelativeToolTip": "MethodSyntax.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAwwE4AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAIwHkAAAB8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T05:50:11.391Z",
-              "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BorrowRecord.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\BorrowRecord.cs",
-              "RelativeDocumentMoniker": "BorrowRecord.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\BorrowRecord.cs",
-              "RelativeToolTip": "BorrowRecord.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T11:44:33.827Z"
             },
             {
               "$type": "Document",
@@ -94,21 +110,23 @@
               "RelativeDocumentMoniker": "QuerySyntax.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\QuerySyntax.cs",
               "RelativeToolTip": "QuerySyntax.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAzwD8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwFYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T10:51:05.891Z"
+              "WhenOpened": "2025-02-12T10:51:05.891Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAgwBIAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAADIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T05:31:13.544Z"
+              "WhenOpened": "2025-02-12T05:31:13.544Z",
+              "EditorCaption": ""
             }
           ]
         }

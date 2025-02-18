@@ -50,7 +50,7 @@ namespace LINQ_Day_2
             var innerJoin = from book in books
                             join record in borrowRecords
                             on book.BookId equals record.BookId into newRecords
-                            from record in newRecords       // Not contain if null value is present
+                            from record in newRecords 
                             select new
                             {
                                 BookTitle = book.Title,
@@ -82,7 +82,6 @@ namespace LINQ_Day_2
                 Console.WriteLine($"Book Title: {record.BookTitle} | Borrow Count: {record.BorrowCount}");
             }
         }
-
         public void BookListBorrowMoreThan3(List<Book> books, List<BorrowRecord> borrowRecords)
         {
             var specificList = from book in books
