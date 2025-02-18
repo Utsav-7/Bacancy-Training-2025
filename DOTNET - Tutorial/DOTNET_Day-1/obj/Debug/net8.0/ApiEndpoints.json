@@ -1,0 +1,80 @@
+[
+  {
+    "ContainingType": "DOTNET_Day_1.Controllers.BasicDataController",
+    "Method": "DeleteData",
+    "RelativePath": "v1/DeleteData/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DOTNET_Day_1.Controllers.BasicDataController",
+    "Method": "GetData",
+    "RelativePath": "v1/GetData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DOTNET_Day_1.Basic, DOTNET_Day-1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DOTNET_Day_1.Controllers.BasicDataController",
+    "Method": "PostData",
+    "RelativePath": "v1/PostData/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "basic",
+        "Type": "DOTNET_Day_1.Basic",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DOTNET_Day_1.Controllers.BasicDataController",
+    "Method": "PutData",
+    "RelativePath": "v1/PutData/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "basic",
+        "Type": "DOTNET_Day_1.Basic",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
