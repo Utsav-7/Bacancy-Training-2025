@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj": {}
+    "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj": {
+    "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj",
+        "projectUniqueName": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj",
         "projectName": "LINQ_Day-2",
-        "projectPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj",
+        "projectPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\C# - Tutorial\\LINQ_Day-2\\LINQ_Day-2.csproj",
         "packagesPath": "C:\\Users\\utsav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training\\C# - Tutorial\\LINQ_Day-2\\obj\\",
+        "outputPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\C# - Tutorial\\LINQ_Day-2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

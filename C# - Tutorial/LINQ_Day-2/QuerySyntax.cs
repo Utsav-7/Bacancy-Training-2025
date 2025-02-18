@@ -122,7 +122,7 @@ namespace LINQ_Day_2
             // Join based on Book Title
             var sameBooks = (from book1 in books1
                             join book2 in books2
-                            on book1.Title equals book2.Title into bookList
+                            on book1.BookId equals book2.BookId into bookList
                             select new
                             {
                                 Title = book1.Title,
@@ -147,6 +147,8 @@ namespace LINQ_Day_2
 
             var deffered = from book in books
                            select book;
+            //deffered.Add(new Book(102, "My New Book 2", "Fiction")); compilation error
+
             Console.WriteLine("----- Deffered Execution -----");
             foreach (var book in deffered)
             {
