@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "DOTNET_Day_2.Controllers.TestController",
+    "Method": "GetData",
+    "RelativePath": "GetData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
