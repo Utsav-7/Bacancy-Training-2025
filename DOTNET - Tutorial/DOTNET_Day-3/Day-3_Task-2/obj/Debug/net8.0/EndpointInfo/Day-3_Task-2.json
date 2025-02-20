@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Day-3_Task-2",
+    "version": "1.0"
+  },
+  "paths": {
+    "/guid/get": {
+      "get": {
+        "tags": [
+          "Guid"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

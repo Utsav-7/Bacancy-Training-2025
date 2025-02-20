@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Day_3_Task_2.Controllers.GuidController",
+    "Method": "GetGuids",
+    "RelativePath": "guid/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
