@@ -1,0 +1,1 @@
+{"Temperature":304.17,"TemperaturePerception":302.51,"TemperatureMin":304.17,"TemperatureMax":304.17,"AtmosphericPressure":1011,"HumidityPercentage":25}

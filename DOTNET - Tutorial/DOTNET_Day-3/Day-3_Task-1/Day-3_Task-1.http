@@ -1,0 +1,6 @@
+@Day_3_Task_1_HostAddress = http://localhost:5285
+
+GET {{Day_3_Task_1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

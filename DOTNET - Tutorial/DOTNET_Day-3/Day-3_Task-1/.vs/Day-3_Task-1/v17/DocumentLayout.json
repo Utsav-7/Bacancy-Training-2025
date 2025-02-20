@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-3\\day-3_task-1\\middlewares\\checkmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|solutionrelative:middlewares\\checkmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-3\\day-3_task-1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-3\\day-3_task-1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-3\\day-3_task-1\\diclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC407F-1929-467A-B7DF-AFF948531D18}|Day-3_Task-1.csproj|solutionrelative:diclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 385,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CheckMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Middlewares\\CheckMiddleware.cs",
+              "RelativeDocumentMoniker": "Middlewares\\CheckMiddleware.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Middlewares\\CheckMiddleware.cs",
+              "RelativeToolTip": "Middlewares\\CheckMiddleware.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T08:41:24.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T06:26:34.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwCcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T06:23:11.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DIClass.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\DIClass.cs",
+              "RelativeDocumentMoniker": "DIClass.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-3\\Day-3_Task-1\\DIClass.cs",
+              "RelativeToolTip": "DIClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T06:20:29.779Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 2670,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

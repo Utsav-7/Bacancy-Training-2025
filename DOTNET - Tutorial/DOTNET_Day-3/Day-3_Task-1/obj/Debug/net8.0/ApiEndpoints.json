@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Day_3_Task_1.Controllers.WeatherController",
+    "Method": "ReadDataFile",
+    "RelativePath": "v1/ReadFile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Day_3_Task_1.Controllers.WeatherController",
+    "Method": "PostWeather",
+    "RelativePath": "v2/PostWeather",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
