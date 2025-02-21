@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "DOTNET_Day_4.Controllers.WeatherController",
+    "Method": "Get",
+    "RelativePath": "GetWeather",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DOTNET_Day_4.Controllers.WeatherController",
+    "Method": "Post",
+    "RelativePath": "PostWeather",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

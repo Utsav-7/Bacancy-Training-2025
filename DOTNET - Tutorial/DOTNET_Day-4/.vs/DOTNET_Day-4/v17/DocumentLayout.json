@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-4\\middleware\\logmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|solutionrelative:middleware\\logmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-4\\middleware\\checkmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|solutionrelative:middleware\\checkmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-4\\controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|solutionrelative:controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-4\\weatherdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|solutionrelative:weatherdata.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\dotnet - tutorial\\dotnet_day-4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66C7FE9-BE5B-40EE-9786-71BB8601AA8A}|DOTNET_Day-4.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 385,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherData.txt",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\WeatherData.txt",
+              "RelativeDocumentMoniker": "WeatherData.txt",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\WeatherData.txt",
+              "RelativeToolTip": "WeatherData.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-21T06:47:52.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Middleware\\LogMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\LogMiddleware.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Middleware\\LogMiddleware.cs",
+              "RelativeToolTip": "Middleware\\LogMiddleware.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwBgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T06:33:59.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CheckMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Middleware\\CheckMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\CheckMiddleware.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Middleware\\CheckMiddleware.cs",
+              "RelativeToolTip": "Middleware\\CheckMiddleware.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwCQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T06:27:00.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Controllers\\WeatherController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Controllers\\WeatherController.cs",
+              "RelativeToolTip": "Controllers\\WeatherController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T05:45:48.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\DOTNET - Tutorial\\DOTNET_Day-4\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T05:43:02.473Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 2670,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
