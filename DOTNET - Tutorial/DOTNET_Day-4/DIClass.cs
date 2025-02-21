@@ -43,7 +43,7 @@ namespace DOTNET_Day_4
                 string filePath = Path.Combine(Directory.GetCurrentDirectory(), "WeatherData.txt");
 
                 // Write to file asynchronously
-                System.IO.File.WriteAllTextAsync(filePath, jsonString);
+                System.IO.File.AppendAllTextAsync(filePath, jsonString + Environment.NewLine);
 
                 return jsonString;
             }
