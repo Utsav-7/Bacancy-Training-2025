@@ -84,7 +84,6 @@ namespace DOTNET_Day_5.Controllers
                     break;
                 }
             }
-
             return Ok("User removed");
         }
 
@@ -109,7 +108,5 @@ namespace DOTNET_Day_5.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
         }
-
-
     }
 }
