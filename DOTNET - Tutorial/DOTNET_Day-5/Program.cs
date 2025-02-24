@@ -37,7 +37,6 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// ✅ Add Authentication & Authorization Middleware
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
