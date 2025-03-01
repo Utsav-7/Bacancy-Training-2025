@@ -25,7 +25,7 @@
     - Create indexes on PlayerID, TournamentID, and Date to improve query performance.
 
 ## Screenshots: 
-![Uploading![Players_Table](https://github.com/user-attachments/assets/d178ccb2-c33c-4d60-a28c-eee4544037db)
+![Players_Table](https://github.com/user-attachments/assets/d178ccb2-c33c-4d60-a28c-eee4544037db)
 ![MatchResults_Table](https://github.com/user-attachments/assets/31e9f4f5-3ada-47b6-aad3-b84565518d15)
 ![Tournaments_Table](https://github.com/user-attachments/assets/91615a30-8291-4e73-b37e-fb364e3602c5)
 ![Query_1](https://github.com/user-attachments/assets/2662b745-53f9-4afb-a3b6-b78af633615c)
