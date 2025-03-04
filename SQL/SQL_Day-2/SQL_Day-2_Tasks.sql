@@ -1,3 +1,5 @@
+-- NOTES: Query from 1 to 7 are completed previously.
+
 -- ---------------------------------------------------------------------------------------------------
 -- 8. Triggers: Implement a trigger to automatically update tournament standings when match scores are recorded.
 CREATE TRIGGER trg_UpdateTournamentStandings
@@ -19,9 +21,11 @@ drop trigger trg_UpdateTournamentStandings
 
 INSERT INTO MatchResults (MatchID,PlayerID, TournamentID, Score)
 VALUES 
-    (16, 1, 1, 50),  
-    (17, 2, 1, 40),
-    (18, 1, 1, 30);
+    (19, 1, 1, 50),  
+    (20, 2, 1, 40),
+    (21, 3, 3, 30);
+
+SELECT * FROM Tournaments;
 
 -- ---------------------------------------------------------------------------------------------------
 -- 9. Cursors: Use a cursor to iterate through match results and compile player performance summaries.
