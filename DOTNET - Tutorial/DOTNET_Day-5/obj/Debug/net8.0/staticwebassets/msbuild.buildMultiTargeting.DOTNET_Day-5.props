@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\DOTNET_Day-5.props" />
-</Project>
