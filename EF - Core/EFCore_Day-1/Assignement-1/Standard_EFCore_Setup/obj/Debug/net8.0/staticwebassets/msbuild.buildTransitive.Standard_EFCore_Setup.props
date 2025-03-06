@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Standard_EFCore_Setup.props" />
+</Project>
