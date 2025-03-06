@@ -1,0 +1,6 @@
+@OnConfiguring_DBContext_Setup_HostAddress = http://localhost:5236
+
+GET {{OnConfiguring_DBContext_Setup_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
