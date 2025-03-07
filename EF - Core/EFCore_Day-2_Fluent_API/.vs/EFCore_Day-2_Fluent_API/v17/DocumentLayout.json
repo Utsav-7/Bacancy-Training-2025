@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\models\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:models\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\migrations\\20250307102126_initial_fluent_api_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:migrations\\20250307102126_initial_fluent_api_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-2_fluent_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C0BF31CB-750D-44B2-9D73-A090DBF9AB5A}|EFCore_Day-2_Fluent_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 385,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250307102126_Initial_Fluent_API_Migration.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Migrations\\20250307102126_Initial_Fluent_API_Migration.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250307102126_Initial_Fluent_API_Migration.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Migrations\\20250307102126_Initial_Fluent_API_Migration.cs",
+              "RelativeToolTip": "Migrations\\20250307102126_Initial_Fluent_API_Migration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAF4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T10:21:27.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "Models\\OrderProduct.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\OrderProduct.cs",
+              "RelativeToolTip": "Models\\OrderProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:58:16.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:53:27.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:51:23.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:50:37.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\DBContext\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "DBContext\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\DBContext\\AppDBContext.cs",
+              "RelativeToolTip": "DBContext\\AppDBContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:48:06.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:47:20.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-2_Fluent_API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-07T09:41:07.414Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 2670,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

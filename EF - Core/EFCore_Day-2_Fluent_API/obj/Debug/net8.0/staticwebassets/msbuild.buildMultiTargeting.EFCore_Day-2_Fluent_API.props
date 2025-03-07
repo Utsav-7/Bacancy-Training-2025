@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EFCore_Day-2_Fluent_API.props" />
+</Project>
