@@ -1,0 +1,6 @@
+@EF_Core_Day_3_CRUD_HostAddress = http://localhost:5032
+
+GET {{EF_Core_Day_3_CRUD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\ef_core_day-3_crud\\controllers\\custcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|solutionrelative:controllers\\custcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\ef_core_day-3_crud\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\ef_core_day-3_crud\\dbcontext\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|solutionrelative:dbcontext\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\ef_core_day-3_crud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\ef_core_day-3_crud\\dtos\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22A8BB34-9F87-4A82-807E-A19ACF1EF48C}|EF_Core_Day-3_CRUD.csproj|solutionrelative:dtos\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 385,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:52:13.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\DBContext\\DBContext.cs",
+              "RelativeDocumentMoniker": "DBContext\\DBContext.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\DBContext\\DBContext.cs",
+              "RelativeToolTip": "DBContext\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:10:30.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\DTOs\\CustomerDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CustomerDTO.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\DTOs\\CustomerDTO.cs",
+              "RelativeToolTip": "DTOs\\CustomerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:00:55.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T10:52:22.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Controllers\\CustController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EF_Core_Day-3_CRUD\\Controllers\\CustController.cs",
+              "RelativeToolTip": "Controllers\\CustController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T10:48:43.508Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 2670,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "EF_Core_Day_3_CRUD.Controllers.CustController",
+    "Method": "AddCustomer",
+    "RelativePath": "api/Cust/AddCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "EF_Core_Day_3_CRUD.DTOs.CustomerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EF_Core_Day_3_CRUD.Controllers.CustController",
+    "Method": "DeleteCustomer",
+    "RelativePath": "api/Cust/DeleteCustomer/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EF_Core_Day_3_CRUD.Controllers.CustController",
+    "Method": "GetAllCustomers",
+    "RelativePath": "api/Cust/GetAllCustomers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EF_Core_Day_3_CRUD.Controllers.CustController",
+    "Method": "GetCustomerById",
+    "RelativePath": "api/Cust/GetCustomerById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EF_Core_Day_3_CRUD.Controllers.CustController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/Cust/UpdateCustomer/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customer",
+        "Type": "EF_Core_Day_3_CRUD.DTOs.CustomerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EF_Core_Day-3_CRUD.props" />
+</Project>
