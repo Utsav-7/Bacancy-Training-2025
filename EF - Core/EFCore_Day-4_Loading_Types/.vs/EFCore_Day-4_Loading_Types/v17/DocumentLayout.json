@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Controllers\\CombineController.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\CombineController.cs",
               "RelativeToolTip": "Controllers\\CombineController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T16:29:28.048Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Controllers\\ExplicitController.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAlwGYAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T16:09:59.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T16:09:59.226Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Controllers\\EagarController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T04:20:35.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T04:20:35.844Z"
             }
           ]
         },

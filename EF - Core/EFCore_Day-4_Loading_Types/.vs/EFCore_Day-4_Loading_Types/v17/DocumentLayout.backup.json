@@ -7,36 +7,12 @@
       "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\combinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\lazycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\lazycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\eagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\eagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\explicitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\explicitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 385,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LazyController.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\LazyController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LazyController.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\LazyController.cs",
-              "RelativeToolTip": "Controllers\\LazyController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T15:11:06.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Customer.cs",
-              "RelativeToolTip": "Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T04:15:07.24Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -82,26 +32,14 @@
               "RelativeDocumentMoniker": "Controllers\\CombineController.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\CombineController.cs",
               "RelativeToolTip": "Controllers\\CombineController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFIAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T16:29:28.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Models\\Order.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Order.cs",
-              "RelativeToolTip": "Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T16:12:25.405Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "ExplicitController.cs",
               "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\ExplicitController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExplicitController.cs",
@@ -109,60 +47,19 @@
               "RelativeToolTip": "Controllers\\ExplicitController.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAlwGYAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T16:09:59.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T16:09:59.226Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\DBContext\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "DBContext\\AppDBContext.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\DBContext\\AppDBContext.cs",
-              "RelativeToolTip": "DBContext\\AppDBContext.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAuwBAAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T10:39:21.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "EagarController.cs",
               "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\EagarController.cs",
               "RelativeDocumentMoniker": "Controllers\\EagarController.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\EagarController.cs",
               "RelativeToolTip": "Controllers\\EagarController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowHMAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T04:20:35.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T06:36:21.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:06:27.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T04:20:35.844Z"
             }
           ]
         },
