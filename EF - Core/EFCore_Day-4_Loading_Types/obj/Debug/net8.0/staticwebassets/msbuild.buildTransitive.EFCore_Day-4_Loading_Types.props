@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EFCore_Day-4_Loading_Types.props" />
+</Project>

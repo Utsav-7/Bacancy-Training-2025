@@ -1,0 +1,6 @@
+@EFCore_Day_4_Loading_Types_HostAddress = http://localhost:5090
+
+GET {{EFCore_Day_4_Loading_Types_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

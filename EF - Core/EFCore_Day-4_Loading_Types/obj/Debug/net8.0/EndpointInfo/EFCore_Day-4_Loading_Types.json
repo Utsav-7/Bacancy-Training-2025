@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EFCore_Day-4_Loading_Types",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Combination/GetOrdersWithLazyOrderProducts": {
+      "get": {
+        "tags": [
+          "Combine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Combination/GetOrdersWithHighQuantityOrderProducts": {
+      "get": {
+        "tags": [
+          "Combine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Combination/RetrieveIsVIPGetCustomer": {
+      "get": {
+        "tags": [
+          "Combine"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Eagar/GetCustomer": {
+      "get": {
+        "tags": [
+          "Eagar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Eager/FilteredData": {
+      "get": {
+        "tags": [
+          "Eagar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Eager/TotalOrders": {
+      "get": {
+        "tags": [
+          "Eagar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Eager/CustRelatedOrder": {
+      "get": {
+        "tags": [
+          "Eagar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Explicit/GetCustByRecentOrder": {
+      "get": {
+        "tags": [
+          "Explicit"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Explicit/GetOrdersWithoutOrderProducts": {
+      "get": {
+        "tags": [
+          "Explicit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Explicit/GetProductsWithLowStockOrders": {
+      "get": {
+        "tags": [
+          "Explicit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Explicit/GetCustomersWithOrdersAndOrderProducts": {
+      "get": {
+        "tags": [
+          "Explicit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Lazy/GetCustomers": {
+      "get": {
+        "tags": [
+          "Lazy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Lazy/highValueOrders": {
+      "get": {
+        "tags": [
+          "Lazy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

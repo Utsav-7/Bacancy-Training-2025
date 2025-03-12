@@ -1,0 +1,138 @@
+[
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.CombineController",
+    "Method": "GetOrdersWithHighQuantityOrderProducts",
+    "RelativePath": "Combination/GetOrdersWithHighQuantityOrderProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.CombineController",
+    "Method": "GetOrdersWithLazyOrderProducts",
+    "RelativePath": "Combination/GetOrdersWithLazyOrderProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.CombineController",
+    "Method": "RetrieveIsVIPGetCustomer",
+    "RelativePath": "Combination/RetrieveIsVIPGetCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.EagarController",
+    "Method": "EagerGetCustomer",
+    "RelativePath": "Eagar/GetCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.EagarController",
+    "Method": "CustRelatedOrder",
+    "RelativePath": "Eager/CustRelatedOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.EagarController",
+    "Method": "FilteredData",
+    "RelativePath": "Eager/FilteredData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.EagarController",
+    "Method": "TotalOrders",
+    "RelativePath": "Eager/TotalOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.ExplicitController",
+    "Method": "GetCustomerWithRecentOrders",
+    "RelativePath": "Explicit/GetCustByRecentOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.ExplicitController",
+    "Method": "GetCustomersWithOrdersAndOrderProducts",
+    "RelativePath": "Explicit/GetCustomersWithOrdersAndOrderProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.ExplicitController",
+    "Method": "GetOrdersWithoutOrderProducts",
+    "RelativePath": "Explicit/GetOrdersWithoutOrderProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.ExplicitController",
+    "Method": "GetProductsWithLowStockOrders",
+    "RelativePath": "Explicit/GetProductsWithLowStockOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.LazyController",
+    "Method": "GetCustomersLazyLoading",
+    "RelativePath": "Lazy/GetCustomers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EFCore_Day_4_Loading_Types.Controllers.LazyController",
+    "Method": "GetHighValueOrders",
+    "RelativePath": "Lazy/highValueOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

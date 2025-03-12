@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\combinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\combinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\eagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\eagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ef - core\\efcore_day-4_loading_types\\controllers\\explicitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F02B6B7-BE3F-485E-A405-700B0715FC34}|EFCore_Day-4_Loading_Types.csproj|solutionrelative:controllers\\explicitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 385,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CombineController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\CombineController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CombineController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\CombineController.cs",
+              "RelativeToolTip": "Controllers\\CombineController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T16:29:28.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExplicitController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\ExplicitController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ExplicitController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\ExplicitController.cs",
+              "RelativeToolTip": "Controllers\\ExplicitController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAlwGYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T16:09:59.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EagarController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\EagarController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EagarController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EF - Core\\EFCore_Day-4_Loading_Types\\Controllers\\EagarController.cs",
+              "RelativeToolTip": "Controllers\\EagarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T04:20:35.844Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 2670,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
