@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EFCore_Day-5_Full_CRUD.props" />
+</Project>
