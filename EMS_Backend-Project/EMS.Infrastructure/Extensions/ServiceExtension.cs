@@ -5,6 +5,8 @@ using EMS_Backend_Project.EMS.Infrastructure.Repositories;
 using EMS_Backend_Project.EMS.Application.Interfaces.UserManagement;
 using FluentValidation;
 using System.Reflection;
+using EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement;
+using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Extensions
 {
@@ -14,6 +16,8 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Extensions
         {
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
+            services.AddScoped<ILeaveRepository, LeaveRepository>();
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services)

@@ -25,6 +25,8 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
                 if (EndDate < StartDate) return 0;
                 return (EndDate.ToDateTime(TimeOnly.MinValue) - StartDate.ToDateTime(TimeOnly.MinValue)).Days + 1;
             }
+
+            set;
         }
 
         [Required(ErrorMessage = "Leave Type is required.")]
@@ -37,7 +39,7 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
         public string Status { get; set; }
 
         public DateTime AppliedAt { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
 
         // Navigation Property
         public virtual Employee Employee { get; set; }

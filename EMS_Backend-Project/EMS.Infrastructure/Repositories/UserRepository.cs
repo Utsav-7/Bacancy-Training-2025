@@ -129,6 +129,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                 throw new Exception("User Not Exists.");
 
             existingUser.IsDeleted = true;
+            existingUser.Active = false;
 
             await _context.SaveChangesAsync();
            
@@ -214,6 +215,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             existingUser.Email = emplyeeUserDTO.Email ?? existingUser.Email;
             existingUser.PhoneNo = emplyeeUserDTO.PhoneNo ?? existingUser.PhoneNo;
             existingUser.Employee.Address = emplyeeUserDTO.Address ?? existingUser.Employee.Address;
+            existingUser.Active = emplyeeUserDTO.Active; 
             existingUser.UpdatedAt = DateTime.UtcNow;
 
             if (emplyeeUserDTO.DateOfBirth != default)

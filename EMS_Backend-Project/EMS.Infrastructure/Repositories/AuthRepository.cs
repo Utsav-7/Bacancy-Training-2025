@@ -5,6 +5,7 @@ using EMS_Backend_Project.EMS.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Collections.Concurrent;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
@@ -28,6 +29,10 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             try
             {
                 var user = await _authService.GetUserByEmailAsync(userLogin.email);
+
+                if (user.Active == false)
+                    throw new Exception("User is not Active.");
+
                 if (user == null)
                     throw new KeyNotFoundException("USER NOT FOUND");
 

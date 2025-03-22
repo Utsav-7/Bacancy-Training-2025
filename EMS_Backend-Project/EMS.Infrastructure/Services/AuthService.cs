@@ -21,9 +21,9 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Services
 
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(s => s.Email == email && s.IsDeleted == false && s.Active == true);
+            var user = await _context.Users.FirstOrDefaultAsync(s => s.Email == email && s.IsDeleted == false);
 
-            if (user == null || !user.Active || user.IsDeleted)
+            if (user == null || user.IsDeleted)
                 throw new KeyNotFoundException("USER NOT FOUND.");
 
             return user;

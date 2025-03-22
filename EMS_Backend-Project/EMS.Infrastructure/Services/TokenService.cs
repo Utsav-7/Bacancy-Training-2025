@@ -20,7 +20,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Services
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            Dictionary<int, string> roles = new Dictionary<int, string> { { 1, "Administrator" }, { 2, "Employee" }};
+            Dictionary<int, string> roles = new Dictionary<int, string> { { 1, "Administrator" }, { 2, "Employee" } };
             string newRole = roles[roleId];
 
             var claims = new List<Claim>

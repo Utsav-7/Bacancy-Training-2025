@@ -13,5 +13,6 @@
         public string TeckStack { get; set; }
         public DateOnly JoinDate { get; set; }
         public DateOnly RelievingDate { get; set; }
+        public bool Active { get; set; }
     }
 }
