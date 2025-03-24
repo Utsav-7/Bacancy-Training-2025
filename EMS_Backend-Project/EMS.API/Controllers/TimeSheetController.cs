@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs;
 using EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using EMS_Backend_Project.EMS.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -35,7 +36,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(list);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -62,7 +63,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(sheet);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -76,7 +77,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Employee")]
         [HttpPost]
         public async Task<ActionResult> Add(TimeSheetDTO timeSheet)
         {
@@ -85,9 +86,14 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                await _timeSheetRepository.AddSheet(timeSheet);
+                var employeeId = GetLoggedInUserId();
+                await _timeSheetRepository.AddSheet(employeeId, timeSheet);
 
                 return Ok("Time Sheet Created Successfully.");
+            }
+            catch(AlreadyExistsException<string> ex)
+            {
+                return BadRequest(new { Message = ex.Message });
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -115,7 +121,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok("Time Sheet Updated Successfully.");
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -142,7 +148,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok("Time Sheet Deleted Successfully.");
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -167,7 +173,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(sheetList);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -191,7 +197,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return sheetList;
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }

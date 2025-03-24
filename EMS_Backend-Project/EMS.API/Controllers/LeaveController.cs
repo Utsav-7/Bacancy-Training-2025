@@ -1,5 +1,7 @@
-﻿using EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs;
+﻿using System.Security.Claims;
+using EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs;
 using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +19,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             _leaveRepository = leaveRepository;
         }
 
+        // Extract the logged-in user's ID from the JWT token   
+        private int GetLoggedInUserId()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+        }
+
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public async Task<ActionResult<GetLeaveDTO>> GetAll()
@@ -27,7 +36,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(leaveRecordsList);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -40,7 +49,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
             }
         }
-
 
         [Authorize(Roles = "Administrator")]
         [HttpGet("GetById")]
@@ -55,7 +63,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(leaveRecord);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -69,6 +77,31 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
+        [Authorize(Roles = "Employee")]
+        [HttpGet("GetYourLeavesData")]
+        public async Task<ActionResult> GetByEmployeeId()
+        {
+            try
+            {
+                var userId = GetLoggedInUserId();
+                var leaveRecord = await _leaveRepository.GetLeaveByID(userId);
+                return Ok(leaveRecord);
+            }
+            catch (DataNotFoundException<int> ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
+            }
+        }
+
+
         [Authorize(Roles = "Administrator, Employee")]
         [HttpPost]
         public async Task<ActionResult> Add(LeaveDTO leave)
@@ -78,13 +111,10 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                await _leaveRepository.AddLeave(leave);
+                var employeeId = GetLoggedInUserId();
+                await _leaveRepository.AddLeave(employeeId, leave);
 
                 return Ok("Leave record created Successfully.");
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(new { Message = ex.Message });
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -112,7 +142,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok("Leave record updated Successfully.");
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -125,7 +155,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
             }
         }
-
 
         [Authorize(Roles = "Administrator")]
         [HttpDelete]
@@ -140,7 +169,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok("Leave record deleted Successfully.");
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -153,6 +182,5 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
             }
         }
-
     }
 }

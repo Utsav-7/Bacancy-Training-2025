@@ -1,6 +1,7 @@
 ﻿using EMS_Backend_Project.EMS.Application.DTOs.Authentication;
 using EMS_Backend_Project.EMS.Application.Interfaces;
 using EMS_Backend_Project.EMS.Application.Interfaces.Authentication;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using EMS_Backend_Project.EMS.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
@@ -26,85 +27,69 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
         public async Task<string> LoginAsync(UserLoginDTO userLogin)
         {
-            try
-            {
-                var user = await _authService.GetUserByEmailAsync(userLogin.email);
+            var user = await _authService.GetUserByEmailAsync(userLogin.email);
 
-                if (user.Active == false)
-                    throw new Exception("User is not Active.");
+            if (user.Active == false)
+                throw new Exception("User is not Active.");
 
-                if (user == null)
-                    throw new KeyNotFoundException("USER NOT FOUND");
+            if (user == null)
+                throw new DataNotFoundException<string>("USER NOT FOUND");
 
-                var passwordHasher = new PasswordHasher<UserLoginDTO>();
-                var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userLogin, user.Password, userLogin.password);
+            var passwordHasher = new PasswordHasher<UserLoginDTO>();
+            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userLogin, user.Password, userLogin.password);
 
-                if (passwordVerificationResult == PasswordVerificationResult.Failed)
-                    throw new Exception("Invalid email or password");
+            if (passwordVerificationResult == PasswordVerificationResult.Failed)
+                throw new Exception("Invalid email or password");
 
-                string token = _tokenService.GenerateToken(userLogin, user.RoleId, user.UserId);
-                Console.WriteLine($"Generated Token: {token}");
+            string token = _tokenService.GenerateToken(userLogin, user.RoleId, user.UserId);
+            Console.WriteLine($"Generated Token: {token}");
 
-                return token;
-            }
-            catch (Exception ex)
-            {
-                throw new(ex.Message);
-            }
+            return token;
         }
 
         public async Task<string> ForgotPassword(ForgotPwdDTO forgotPwd)
         {
-            try
-            {
-                var user = await _authService.GetUserByEmailAsync(forgotPwd.Email);
-                var encodedToken = _authService.GenerateResetToken();
-                Console.WriteLine($"Reset Token: {encodedToken}");
+            var user = await _authService.GetUserByEmailAsync(forgotPwd.Email);
 
-                string resetUrl = $"https://yourdomain.com/reset-password?email={Uri.EscapeDataString(user.Email)}&token={encodedToken}";
+            if (user == null)
+                throw new DataNotFoundException<string>(forgotPwd.Email);
 
-                // Email body
-                var emailBody = $@"
-                            <h2>Password Reset Request</h2>
-                            <p>Click <a href='{resetUrl}'>here</a> to reset your password.</p>
-                            <p>If you did not request this, please ignore this email.</p>";
+            var encodedToken = _authService.GenerateResetToken();
+            Console.WriteLine($"Reset Token: {encodedToken}");
+
+            string resetUrl = $"https://yourdomain.com/reset-password?email={Uri.EscapeDataString(user.Email)}&toke{encodedToken}";
+
+            // Email body
+            var emailBody = $@"
+                        <h2>Password Reset Request</h2>
+                        <p>Click <a href='{resetUrl}'>here</a> to reset your password.</p>
+                        <p>If you did not request this, please ignore this email.</p>";
 
 
-                await _emailService.SendEmailAsync(user.Email, "Reset Password", emailBody);
+            await _emailService.SendEmailAsync(user.Email, "Reset Password", emailBody);
 
-                return "Reset link sent to email.";
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            return "Reset link sent to email.";
         }
 
         public async Task<string> ResetPassword(ResetPwdDTO resetPwd)
         {
-            try
-            {
-                if (resetPwd.NewPassword != resetPwd.ConfirmPassword)
-                    throw new Exception("New Password and Confirm Password are not match.");
+            if (resetPwd.NewPassword != resetPwd.ConfirmPassword)
+                throw new Exception("New Password and Confirm Password are not match.");
 
-                string decodedToken = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(resetPwd.Token));
-                var user = await _authService.GetUserByEmailAsync(resetPwd.Email);
+            string decodedToken = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(resetPwd.Token));
 
-                string expectedToken = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 20);
+            var user = await _authService.GetUserByEmailAsync(resetPwd.Email);
 
-                if (decodedToken.Length != expectedToken.Length)
-                    throw new Exception("Invalid reset token.");
+            string expectedToken = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 20);
 
-                bool status = await _authService.UpdatePasswordDB(resetPwd.ConfirmPassword, user);
+            if (decodedToken.Length != expectedToken.Length)
+                throw new Exception("Invalid reset token.");
 
-                _resetTokens.TryRemove(resetPwd.Email, out _);
+            bool status = await _authService.UpdatePasswordDB(resetPwd.ConfirmPassword, user);
 
-                return status ? "Password has been reset successfully." : "Password has been not reset";
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            _resetTokens.TryRemove(resetPwd.Email, out _);
+
+            return status ? "Password has been reset successfully." : "Password has been not reset";
         }
     }
 }

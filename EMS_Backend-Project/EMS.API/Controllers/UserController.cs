@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using EMS_Backend_Project.EMS.Application.DTOs.UserDTOs;
 using EMS_Backend_Project.EMS.Application.Interfaces.UserManagement;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EMS_Backend_Project.EMS.API.Controllers
 {
-    //[Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -30,7 +31,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(usersList);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -56,7 +57,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return Ok(users);
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -81,9 +82,9 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return "New Admin Created Successfully. And Credentials will send in Registered Email.";
             }
-            catch (KeyNotFoundException ex)
+            catch(AlreadyExistsException<string> ex)
             {
-                return NotFound(new { Message = ex.Message });
+                return BadRequest(new { Message = ex.Message });
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -106,7 +107,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
                 return "New Employee Created Successfully. And Credentials will send in Registered Email.";
             }
-            catch (KeyNotFoundException ex)
+            catch (AlreadyExistsException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -129,9 +130,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             {
                 await _userRepository.UpdateAdminById(id,adminUser);
 
-                return "New Admin Updated Successfully.";
+                return "Admin Updated Successfully.";
             }
-            catch (KeyNotFoundException ex)
+            catch (AlreadyExistsException<string> ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -154,9 +159,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             {
                 await _userRepository.UpdateEmployeeById(id, emplyeeUser);
 
-                return "New Employee Updated Successfully.";
+                return "Employee Updated Successfully.";
             }
-            catch (KeyNotFoundException ex)
+            catch(AlreadyExistsException<string> ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -177,9 +186,9 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             {
                 await _userRepository.DeleteUserById(id);
 
-                return "New User Deleted Successfully.";
+                return "User Deleted Successfully.";
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<int> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }

@@ -30,10 +30,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
     <PackageReference Include="System.Threading.RateLimiting" Version="9.0.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EMS.Common\" />
-  </ItemGroup>
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>

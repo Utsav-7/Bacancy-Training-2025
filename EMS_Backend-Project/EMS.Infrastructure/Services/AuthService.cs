@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using EMS_Backend_Project.EMS.Infrastructure.Repositories;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Services
 {
@@ -24,7 +25,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Services
             var user = await _context.Users.FirstOrDefaultAsync(s => s.Email == email && s.IsDeleted == false);
 
             if (user == null || user.IsDeleted)
-                throw new KeyNotFoundException("USER NOT FOUND.");
+                throw new DataNotFoundException<string>($"No user found with {email}.");
 
             return user;
         }

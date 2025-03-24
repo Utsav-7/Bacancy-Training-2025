@@ -7,52 +7,24 @@
       "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.infrastructure\\repositories\\leaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.domain\\entities\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.domain\\entities\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.api\\controllers\\leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.api\\controllers\\leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.application\\dtos\\leavesdtos\\leavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.application\\dtos\\leavesdtos\\leavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.infrastructure\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.infrastructure\\extensions\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.api\\controllers\\timesheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.api\\controllers\\timesheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.application\\interfaces\\leavemanagement\\ileaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.application\\interfaces\\leavemanagement\\ileaverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.application\\dtos\\leavesdtos\\getleavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.application\\dtos\\leavesdtos\\getleavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.infrastructure\\repositories\\timesheetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.infrastructure\\repositories\\timesheetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.api\\controllers\\timesheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.api\\controllers\\timesheetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\ems.domain\\entities\\timesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:ems.domain\\entities\\timesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|c:\\users\\utsav\\onedrive\\desktop\\bacancy-training-2025\\ems_backend-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC0E559A-DB24-457C-87C6-E317BD153E84}|EMS_Backend-Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 385,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAFEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T04:19:34.296Z",
               "IsPinned": true,
@@ -84,54 +56,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceExtension.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Extensions\\ServiceExtension.cs",
-              "RelativeDocumentMoniker": "EMS.Infrastructure\\Extensions\\ServiceExtension.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Extensions\\ServiceExtension.cs",
-              "RelativeToolTip": "EMS.Infrastructure\\Extensions\\ServiceExtension.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ILeaveRepository.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
+              "RelativeDocumentMoniker": "EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
+              "RelativeToolTip": "EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T14:15:02.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TimeSheetController.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\TimeSheetController.cs",
-              "RelativeDocumentMoniker": "EMS.API\\Controllers\\TimeSheetController.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\TimeSheetController.cs",
-              "RelativeToolTip": "EMS.API\\Controllers\\TimeSheetController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T13:42:27.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetLeaveDTO.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\DTOs\\LeavesDTOs\\GetLeaveDTO.cs",
-              "RelativeDocumentMoniker": "EMS.Application\\DTOs\\LeavesDTOs\\GetLeaveDTO.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\DTOs\\LeavesDTOs\\GetLeaveDTO.cs",
-              "RelativeToolTip": "EMS.Application\\DTOs\\LeavesDTOs\\GetLeaveDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T13:25:27.346Z",
+              "WhenOpened": "2025-03-24T12:23:48.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Leave.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\Leave.cs",
-              "RelativeDocumentMoniker": "EMS.Domain\\Entities\\Leave.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\Leave.cs",
-              "RelativeToolTip": "EMS.Domain\\Entities\\Leave.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAcwB4AAAAAAAAAAAAAAA==",
+              "Title": "LeaveController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\LeaveController.cs",
+              "RelativeDocumentMoniker": "EMS.API\\Controllers\\LeaveController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\LeaveController.cs",
+              "RelativeToolTip": "EMS.API\\Controllers\\LeaveController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwFMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T13:14:39.93Z",
+              "WhenOpened": "2025-03-24T12:02:40.606Z",
               "EditorCaption": ""
             },
             {
@@ -142,100 +88,35 @@
               "RelativeDocumentMoniker": "EMS.Infrastructure\\Repositories\\LeaveRepository.cs",
               "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Repositories\\LeaveRepository.cs",
               "RelativeToolTip": "EMS.Infrastructure\\Repositories\\LeaveRepository.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAcwGgAAACOAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwDwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T13:02:43.493Z",
+              "WhenOpened": "2025-03-24T11:46:49.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TimeSheetController.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\TimeSheetController.cs",
+              "RelativeDocumentMoniker": "EMS.API\\Controllers\\TimeSheetController.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\TimeSheetController.cs",
+              "RelativeToolTip": "EMS.API\\Controllers\\TimeSheetController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAIwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T11:06:36.406Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LeaveDTO.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\DTOs\\LeavesDTOs\\LeaveDTO.cs",
-              "RelativeDocumentMoniker": "EMS.Application\\DTOs\\LeavesDTOs\\LeaveDTO.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\DTOs\\LeavesDTOs\\LeaveDTO.cs",
-              "RelativeToolTip": "EMS.Application\\DTOs\\LeavesDTOs\\LeaveDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Title": "TimeSheetRepository.cs",
+              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Repositories\\TimeSheetRepository.cs",
+              "RelativeDocumentMoniker": "EMS.Infrastructure\\Repositories\\TimeSheetRepository.cs",
+              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Repositories\\TimeSheetRepository.cs",
+              "RelativeToolTip": "EMS.Infrastructure\\Repositories\\TimeSheetRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAIA7wF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T12:57:03.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ILeaveRepository.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
-              "RelativeDocumentMoniker": "EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
-              "RelativeToolTip": "EMS.Application\\Interfaces\\LeaveManagement\\ILeaveRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T12:52:56.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "EMS.Infrastructure\\Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Services\\TokenService.cs",
-              "RelativeToolTip": "EMS.Infrastructure\\Services\\TokenService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAtwBYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T09:34:41.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "EMS.Infrastructure\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Infrastructure\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "EMS.Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T08:33:11.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LeaveController.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\LeaveController.cs",
-              "RelativeDocumentMoniker": "EMS.API\\Controllers\\LeaveController.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.API\\Controllers\\LeaveController.cs",
-              "RelativeToolTip": "EMS.API\\Controllers\\LeaveController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAswCYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T13:40:28.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "EMS.Domain\\Entities\\Employee.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\Employee.cs",
-              "RelativeToolTip": "EMS.Domain\\Entities\\Employee.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T08:28:31.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TimeSheet.cs",
-              "DocumentMoniker": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\TimeSheet.cs",
-              "RelativeDocumentMoniker": "EMS.Domain\\Entities\\TimeSheet.cs",
-              "ToolTip": "C:\\Users\\utsav\\OneDrive\\Desktop\\Bacancy-Training-2025\\EMS_Backend-Project\\EMS.Domain\\Entities\\TimeSheet.cs",
-              "RelativeToolTip": "EMS.Domain\\Entities\\TimeSheet.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T08:28:27.267Z",
+              "WhenOpened": "2025-03-24T11:06:33.911Z",
               "EditorCaption": ""
             }
           ]

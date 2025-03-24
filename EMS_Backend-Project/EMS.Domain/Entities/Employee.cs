@@ -33,6 +33,5 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
         public virtual Department Department { get; set; }
         public virtual ICollection<TimeSheet> TimeSheets { get; set; } = new HashSet<TimeSheet>();
         public virtual ICollection<Leave>? Leaves { get; set; } = new HashSet<Leave>();
-        public virtual ICollection<ReportAnalysis> Report { get; set; } = new HashSet<ReportAnalysis>();
     }
 }

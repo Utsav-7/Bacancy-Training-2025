@@ -1,5 +1,6 @@
 ﻿using EMS_Backend_Project.EMS.Application.DTOs.Authentication;
 using EMS_Backend_Project.EMS.Application.Interfaces.Authentication;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +27,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 var token = await _authRepository.LoginAsync(userLoginDTO);
                 return Ok(new { Token = token });
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -47,7 +48,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 var result = await _authRepository.ForgotPassword(forgotPwdDTO);
                 return Ok(new { Message = result });
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message }); // 404 if email not found
             }
@@ -68,7 +69,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
                 var result = await _authRepository.ResetPassword(resetPwdDTO);
                 return Ok(new { Message = result });
             }
-            catch (KeyNotFoundException ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }

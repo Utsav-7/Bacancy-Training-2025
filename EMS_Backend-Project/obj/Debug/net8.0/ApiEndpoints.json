@@ -78,6 +78,105 @@
     ]
   },
   {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.DepartmentController",
+    "Method": "Add",
+    "RelativePath": "api/Department",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.DepartmentController",
+    "Method": "Update",
+    "RelativePath": "api/Department",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.DepartmentController",
+    "Method": "Deletee",
+    "RelativePath": "api/Department",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.DepartmentController",
+    "Method": "GetAll",
+    "RelativePath": "api/Department/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.ICollection\u00601[[EMS_Backend_Project.EMS.Application.DTOs.DepartmentDTOs.GetDepartmentDTO, EMS_Backend-Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.DepartmentController",
+    "Method": "GetById",
+    "RelativePath": "api/Department/GetById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.DepartmentDTOs.GetDepartmentDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.LeaveController",
     "Method": "GetAll",
     "RelativePath": "api/Leave",
@@ -164,6 +263,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.LeaveController",
+    "Method": "GetByEmployeeId",
+    "RelativePath": "api/Leave/GetYourLeavesData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

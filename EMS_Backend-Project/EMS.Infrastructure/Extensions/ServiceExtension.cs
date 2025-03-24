@@ -3,10 +3,10 @@ using EMS_Backend_Project.EMS.Application.Interfaces;
 using EMS_Backend_Project.EMS.Infrastructure.Services;
 using EMS_Backend_Project.EMS.Infrastructure.Repositories;
 using EMS_Backend_Project.EMS.Application.Interfaces.UserManagement;
-using FluentValidation;
-using System.Reflection;
 using EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement;
 using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
+using EMS_Backend_Project.EMS.Application.Interfaces.ReportAnalyticsManagement;
+using EMS_Backend_Project.EMS.Application.Interfaces.DepartmentManagement;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Extensions
 {
@@ -18,6 +18,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
             services.AddScoped<ILeaveRepository, LeaveRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services)

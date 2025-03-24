@@ -1,5 +1,6 @@
 ﻿using EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs;
 using EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using EMS_Backend_Project.EMS.Domain.Entities;
 using EMS_Backend_Project.EMS.Infrastructure.Database;
 using EMS_Backend_Project.EMS.Infrastructure.Services;
@@ -15,40 +16,6 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
         {
         }
 
-        public async Task AddSheet(TimeSheetDTO timeSheet)
-        {
-            var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.EmployeeId == timeSheet.EmployeeId && s.WorkDate == timeSheet.WorkDate);
-
-            if (existingSheet != null)
-                throw new Exception("Time sheet already exists.");
-
-            var newSheet = new TimeSheet
-            {
-                EmployeeId = timeSheet.EmployeeId,
-                WorkDate = timeSheet.WorkDate,
-                StartTime = timeSheet.StartTime,
-                EndTime = timeSheet.EndTime,
-                BreakTime = timeSheet.BreakTime,
-                Description = timeSheet.Description,
-                CreatedAt = DateTime.UtcNow,
-                TotalHours = (timeSheet.EndTime - timeSheet.StartTime - timeSheet.BreakTime)
-            };
-
-            _context.TimeSheets.Add(newSheet);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteSheet(int id, DateOnly date)
-        {
-            var existingSheet = await _context.TimeSheets.FirstOrDefaultAsync(s => s.EmployeeId == id && s.WorkDate == date);
-
-            if (existingSheet == null)
-                throw new Exception("Time sheet not exists.");
-
-            _context.TimeSheets.Remove(existingSheet);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task<ICollection<GetTimeSheetDTO>> GetAllSheets()
         {
             var sheetList = await _context.TimeSheets.Include(s => s.Employee)
@@ -57,7 +24,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                      .Select(s => new GetTimeSheetDTO
                                                      {
                                                          TimeSheetId = s.TimeSheetId,
-                                                         EmployeeName = s.Employee.User.FirstName +  " " + s.Employee.User.LastName,
+                                                         EmployeeName = s.Employee.User.FirstName + " " + s.Employee.User.LastName,
                                                          DepartmentName = s.Employee.Department.DepartmentName,
                                                          WorkDate = s.WorkDate,
                                                          StartTime = s.StartTime,
@@ -67,10 +34,30 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                          Description = s.Description
                                                      }).ToListAsync();
 
-            if(sheetList == null)
-                throw new Exception("No sheets found.");
+            if (sheetList == null)
+                throw new DataNotFoundException<string>("No Time sheet found.");
 
             return sheetList;
+        }
+
+        public async Task<ICollection<EmployeeSheetDTO>> GetSheetById(int employeeId)
+        {
+            var getSheetList = await _context.TimeSheets.Where(s => s.EmployeeId == employeeId).Select(s => new EmployeeSheetDTO
+            {
+                TimeSheetId = s.TimeSheetId,
+                EmployeeId = s.EmployeeId,
+                WorkDate = s.WorkDate,
+                StartTime = s.StartTime,
+                EndTime = s.EndTime,
+                BreakTime = s.BreakTime,
+                TotalWorkHours = s.TotalHours,
+                Description = s.Description
+            }).ToListAsync();
+
+            if (getSheetList == null)
+                throw new DataNotFoundException<int>(employeeId);
+
+            return getSheetList;
         }
 
         public async Task<GetTimeSheetDTO> GetSheetByIdAndDate(int employeeId, DateOnly workDate)
@@ -94,9 +81,40 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                                  }).FirstOrDefaultAsync();
 
             if (sheet == null)
-                throw new Exception("No Data found.");
+                throw new DataNotFoundException<int>(employeeId);
 
             return sheet;
+        }
+
+        public async Task AddSheet(int userId, TimeSheetDTO timeSheet)
+        {
+            var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.EmployeeId == timeSheet.EmployeeId && s.WorkDate == timeSheet.WorkDate);
+
+            var employee = await _context.Employees.FirstOrDefaultAsync(s => s.UserId == userId || s.UserId == timeSheet.EmployeeId);
+            var newId = employee?.EmployeeId ?? timeSheet.EmployeeId;
+
+            if (existingSheet != null)
+                throw new AlreadyExistsException<string>("Time Sheet already Exists.");
+
+            if (employee == null)
+            {
+                throw new DataNotFoundException<int>(userId);
+            }
+
+            var newSheet = new TimeSheet
+            {
+                EmployeeId = newId,
+                WorkDate = timeSheet.WorkDate,
+                StartTime = timeSheet.StartTime,
+                EndTime = timeSheet.EndTime,
+                BreakTime = timeSheet.BreakTime,
+                Description = timeSheet.Description,
+                CreatedAt = DateTime.UtcNow,
+                TotalHours = (timeSheet.EndTime - timeSheet.StartTime - timeSheet.BreakTime)
+            };
+
+            _context.TimeSheets.Add(newSheet);
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateSheet(int id, TimeSheetDTO timeSheet)
@@ -104,7 +122,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.EmployeeId == id);
 
             if (existingSheet == null)
-                throw new KeyNotFoundException("No sheet found.");
+                throw new DataNotFoundException<int>(id);
 
             existingSheet.EmployeeId = id;
             existingSheet.WorkDate = timeSheet.WorkDate;
@@ -118,24 +136,15 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<ICollection<EmployeeSheetDTO>> GetSheetById(int employeeId)
+        public async Task DeleteSheet(int id, DateOnly date)
         {
-            var getSheetList = await _context.TimeSheets.Where(s => s.EmployeeId == employeeId).Select(s => new EmployeeSheetDTO
-            {
-                TimeSheetId = s.TimeSheetId,
-                EmployeeId = s.EmployeeId,
-                WorkDate = s.WorkDate,
-                StartTime = s.StartTime,
-                EndTime = s.EndTime,
-                BreakTime = s.BreakTime,
-                TotalWorkHours = s.TotalHours,
-                Description = s.Description
-            }).ToListAsync();
+            var existingSheet = await _context.TimeSheets.FirstOrDefaultAsync(s => s.EmployeeId == id && s.WorkDate == date);
 
-            if (getSheetList == null)
-                throw new Exception("Not sheets found.");
+            if (existingSheet == null)
+                throw new DataNotFoundException<int>(id);
 
-            return getSheetList;
+            _context.TimeSheets.Remove(existingSheet);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<FileContentResult> ExportAllRecords()
@@ -164,6 +173,5 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                 FileDownloadName = "TimeSheet.xlsx"
             };
         }
-
     }
 }

@@ -13,7 +13,6 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Database
         public DbSet<Role> Roles { get; set; }
         public DbSet<TimeSheet> TimeSheets { get; set; }
         public DbSet<Leave> Leaves { get; set; }
-        public DbSet<ReportAnalysis> ReportAnalyses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -66,18 +65,18 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Database
                 .OnDelete(DeleteBehavior.Cascade);
 
             // One-to-Many: Employee ↔ ReportAnalysis
-            modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Report)
-                .WithOne(r => r.Employee)
-                .HasForeignKey(r => r.EmployeeId)
-                .OnDelete(DeleteBehavior.NoAction);
+            //modelBuilder.Entity<Employee>()
+            //    .HasMany(e => e.Report)
+            //    .WithOne(r => r.Employee)
+            //    .HasForeignKey(r => r.EmployeeId)
+            //    .OnDelete(DeleteBehavior.NoAction);
 
-            // One-to-Many: Department ↔ ReportAnalysis
-            modelBuilder.Entity<Department>()
-                .HasMany(d => d.Report)
-                .WithOne(r => r.Department)
-                .HasForeignKey(r => r.DepartmentId)
-                .OnDelete(DeleteBehavior.NoAction);
+            //// One-to-Many: Department ↔ ReportAnalysis
+            //modelBuilder.Entity<Department>()
+            //    .HasMany(d => d.Report)
+            //    .WithOne(r => r.Department)
+            //    .HasForeignKey(r => r.DepartmentId)
+            //    .OnDelete(DeleteBehavior.NoAction);
 
             // Data seeding for Role Table
             modelBuilder.Entity<Role>().HasData(

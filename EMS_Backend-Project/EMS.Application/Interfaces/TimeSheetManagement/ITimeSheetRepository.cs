@@ -7,7 +7,7 @@ namespace EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement
     {
         Task<ICollection<GetTimeSheetDTO>> GetAllSheets();
         Task<GetTimeSheetDTO> GetSheetByIdAndDate(int employeeId, DateOnly workDate);
-        Task AddSheet(TimeSheetDTO timeSheet);
+        Task AddSheet(int employeeId,TimeSheetDTO timeSheet);
         Task UpdateSheet(int id, TimeSheetDTO timeSheet);
         Task DeleteSheet(int id, DateOnly workDate);
         Task<ICollection<EmployeeSheetDTO>> GetSheetById(int id);

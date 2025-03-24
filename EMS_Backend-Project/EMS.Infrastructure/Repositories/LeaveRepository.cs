@@ -1,44 +1,16 @@
 ﻿using EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs;
 using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
+using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using EMS_Backend_Project.EMS.Domain.Entities;
 using EMS_Backend_Project.EMS.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 {
     public class LeaveRepository : Repository<Leave>, ILeaveRepository
     {
         public LeaveRepository(ApplicationDBContext context) : base(context){}
-
-        public async Task AddLeave(LeaveDTO leave)
-        {
-            var newLeave = new Leave
-            {
-                EmployeeId = leave.EmployeeId,
-                StartDate = leave.StartDate,
-                EndDate = leave.EndDate,
-                TotalDays = (leave.EndDate.ToDateTime(TimeOnly.MinValue) - leave.StartDate.ToDateTime(TimeOnly.MinValue)).Days + 1,
-                LeaveType = leave.LeaveType,
-                Reason = leave.LeaveType,
-                Status = leave.Status,
-                AppliedAt = DateTime.UtcNow,
-                UpdatedAt = null
-            };
-            _context.Leaves.Add(newLeave);
-
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteLeave(int id)
-        {
-            var existingLeave = await _context.Leaves.FindAsync(id);
-
-            if (existingLeave == null)
-                throw new Exception("No Leave records found.");
-
-            _context.Leaves.Remove(existingLeave);
-            await _context.SaveChangesAsync();
-        }
 
         public async Task<ICollection<GetLeaveDTO>> GetAllLeaves()
         {
@@ -60,15 +32,21 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                 AppliedAt = s.AppliedAt
                                             }).ToListAsync();
 
+            if (leaveRecords == null)
+                throw new DataNotFoundException<string>("No any Leave record found.");
+
             return leaveRecords;
         }
 
-        public async Task<GetLeaveDTO> GetLeaveByID(int id)
+
+
+        // resolve error for fetch particular leaves for employee 24/03/2025
+        public async Task<ICollection<GetLeaveDTO>> GetLeaveByID(int userId)
         {
             var leaveRecord = await _context.Leaves.Include(s => s.Employee)
                                                                 .ThenInclude(u => u.User)
                                                                 .ThenInclude(d => d.Employee.Department)
-                                                                .Where(c => c.LeaveId == id)
+                                                                .Where(c => c.Employee.UserId == userId || c.EmployeeId == userId)
                                                                 .Select(s => new GetLeaveDTO
                                                                 {
                                                                     LeaveId = s.LeaveId,
@@ -81,12 +59,40 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                                     Reason = s.Reason,
                                                                     Status = s.Status,
                                                                     AppliedAt = s.AppliedAt
-                                                                }).FirstOrDefaultAsync();
+                                                                }).ToListAsync();
 
             if (leaveRecord == null)
-                throw new Exception("No Leave records found.");
+                throw new DataNotFoundException<int>(userId);
 
             return leaveRecord;
+        }
+
+        public async Task AddLeave(int employeeId, LeaveDTO leave)
+        {
+
+            var employee = await _context.Employees.FirstOrDefaultAsync(s => s.UserId == employeeId || s.UserId == leave.EmployeeId);
+            int newId = employee?.EmployeeId ?? leave.EmployeeId;
+
+            if (employee == null)
+            {
+                throw new DataNotFoundException<int>(employeeId);
+            }
+
+            var newLeave = new Leave
+            {
+                EmployeeId = newId,
+                StartDate = leave.StartDate,
+                EndDate = leave.EndDate,
+                TotalDays = (leave.EndDate.ToDateTime(TimeOnly.MinValue) - leave.StartDate.ToDateTime(TimeOnly.MinValue)).Days + 1,
+                LeaveType = leave.LeaveType,
+                Reason = leave.Reason,
+                Status = leave.Status,
+                AppliedAt = DateTime.UtcNow,
+                UpdatedAt = null
+            };
+            _context.Leaves.Add(newLeave);
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateLeave(int id, LeaveDTO leave)
@@ -94,7 +100,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             var existingRecord = await _context.Leaves.FindAsync(id);
 
             if (existingRecord == null)
-                throw new KeyNotFoundException("No Leave Record Found.");
+                throw new DataNotFoundException<int>(id);
 
             existingRecord.EmployeeId = leave.EmployeeId;
             existingRecord.StartDate = leave.StartDate;
@@ -106,6 +112,17 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             existingRecord.UpdatedAt = DateTime.UtcNow;
 
             _context.Leaves.Update(existingRecord);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteLeave(int id)
+        {
+            var existingLeave = await _context.Leaves.FindAsync(id);
+
+            if (existingLeave == null)
+                throw new DataNotFoundException<int>(id);
+
+            _context.Leaves.Remove(existingLeave);
             await _context.SaveChangesAsync();
         }
     }

@@ -18,6 +18,5 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
 
         // Navigation Property
         public virtual ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
-        public virtual ICollection<ReportAnalysis>? Report { get; set; } = new HashSet<ReportAnalysis>();
     }
 }
