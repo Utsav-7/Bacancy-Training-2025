@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EMS_Backend_Project.EMS.API.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     [Route("api/[controller]")]
     [ApiController]
     public class TimeSheetController : ControllerBase
@@ -26,7 +27,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
         }
 
-        [Authorize(Roles = "Administrator")]
         [HttpGet("GetAllSheet")]
         public async Task<ActionResult<GetTimeSheetDTO>> GetAll()
         {
@@ -50,7 +50,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
         [HttpGet("GetSheetByID&Date")]
         public async Task<ActionResult<GetTimeSheetDTO>> GetByIdDate(int id, DateOnly date)
         {
@@ -77,7 +76,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator, Employee")]
         [HttpPost]
         public async Task<ActionResult> Add(TimeSheetDTO timeSheet)
         {
@@ -105,7 +103,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize (Roles = "Administrator, Employee")]
         [HttpPut]
         public async Task<ActionResult> Update(int employeeId, TimeSheetDTO timeSheet)
         {
@@ -135,7 +132,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
         [HttpDelete]
         public async Task<ActionResult<GetTimeSheetDTO>> Delete(int id, DateOnly date)
         {
@@ -162,32 +158,6 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [Authorize(Roles = "Employee")]
-        [HttpGet("YourSheet")]
-        public async Task<ActionResult<TimeSheetDTO>> GetYourRecords()
-        {
-            try
-            {
-                int currentUser = GetLoggedInUserId();
-                var sheetList = await _timeSheetRepository.GetSheetById(currentUser);
-
-                return Ok(sheetList);
-            }
-            catch (DataNotFoundException<string> ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                return Unauthorized(new { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
-            }
-        }
-
-        [Authorize(Roles = "Administrator")]
         [HttpGet("GenerateExcel")]
         public async Task<ActionResult<TimeSheetDTO>> DownloadExcel()
         {

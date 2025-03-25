@@ -177,6 +177,126 @@
     ]
   },
   {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Employee/ChangePassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeePwdUpdate",
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.EmployeeDTOs.EmployeePwdUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "AddTimeSheet",
+    "RelativePath": "api/Employee/CreateTimeSheet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "timeSheet",
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs.TimeSheetDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "GetYourRecords",
+    "RelativePath": "api/Employee/GetYourSheets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs.TimeSheetDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "Profile",
+    "RelativePath": "api/Employee/Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "Add",
+    "RelativePath": "api/Employee/TakeLeave",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leave",
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs.LeaveDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Employee/UpdateProfile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeUpdate",
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.EmployeeDTOs.EmployeeUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "Update",
+    "RelativePath": "api/Employee/UpdateTimeSheet",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "timeSheet",
+        "Type": "EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs.TimeSheetDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.EmployeeController",
+    "Method": "GetById",
+    "RelativePath": "api/Employee/YourLeaves",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.LeaveController",
     "Method": "GetAll",
     "RelativePath": "api/Leave",
@@ -266,13 +386,87 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.LeaveController",
-    "Method": "GetByEmployeeId",
-    "RelativePath": "api/Leave/GetYourLeavesData",
-    "HttpMethod": "GET",
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.ReportController",
+    "Method": "GetMonthlyWorkHoursReportOfAll",
+    "RelativePath": "api/Report/GetAllEmployeeReportByMonthly",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.ReportController",
+    "Method": "GetWeeklyReportOfAll",
+    "RelativePath": "api/Report/GetAllEmployeeReportByWeekly",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.ReportController",
+    "Method": "GetMonthlyWorkHoursReportAsync",
+    "RelativePath": "api/Report/GetReportByMonthly",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.ReportController",
+    "Method": "GetWeeklyReport",
+    "RelativePath": "api/Report/GetReportByWeekly",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -405,26 +599,6 @@
     "ReturnTypes": [
       {
         "Type": "EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs.GetTimeSheetDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EMS_Backend_Project.EMS.API.Controllers.TimeSheetController",
-    "Method": "GetYourRecords",
-    "RelativePath": "api/TimeSheet/YourSheet",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs.TimeSheetDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

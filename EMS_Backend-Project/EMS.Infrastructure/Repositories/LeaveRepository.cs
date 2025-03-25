@@ -37,16 +37,12 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
             return leaveRecords;
         }
-
-
-
-        // resolve error for fetch particular leaves for employee 24/03/2025
-        public async Task<ICollection<GetLeaveDTO>> GetLeaveByID(int userId)
+        public async Task<ICollection<GetLeaveDTO>> GetLeaveByID(int id)
         {
             var leaveRecord = await _context.Leaves.Include(s => s.Employee)
                                                                 .ThenInclude(u => u.User)
                                                                 .ThenInclude(d => d.Employee.Department)
-                                                                .Where(c => c.Employee.UserId == userId || c.EmployeeId == userId)
+                                                                .Where(c => c.Employee.UserId == id)
                                                                 .Select(s => new GetLeaveDTO
                                                                 {
                                                                     LeaveId = s.LeaveId,
@@ -62,11 +58,10 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                                 }).ToListAsync();
 
             if (leaveRecord == null)
-                throw new DataNotFoundException<int>(userId);
+                throw new DataNotFoundException<int>(id);
 
             return leaveRecord;
         }
-
         public async Task AddLeave(int employeeId, LeaveDTO leave)
         {
 

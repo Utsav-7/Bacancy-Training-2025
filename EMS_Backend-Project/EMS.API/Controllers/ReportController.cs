@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-using EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs;
-using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
+﻿using EMS_Backend_Project.EMS.Application.Interfaces.ReportAnalyticsManagement;
 using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -8,33 +6,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EMS_Backend_Project.EMS.API.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize (Roles = "Administrator")]
     [Route("api/[controller]")]
     [ApiController]
-    public class LeaveController : ControllerBase
+    public class ReportController : ControllerBase
     {
-        private readonly ILeaveRepository _leaveRepository;
+        private readonly IReportRepository _reportRepository;
 
-        public LeaveController(ILeaveRepository leaveRepository)
+        public ReportController(IReportRepository reportRepository)
         {
-            _leaveRepository = leaveRepository;
+            _reportRepository = reportRepository;
         }
 
-        // Extract the logged-in user's ID from the JWT token   
-        private int GetLoggedInUserId()
-        {
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-            return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
-        }
-
-        [HttpGet]
-        public async Task<ActionResult<GetLeaveDTO>> GetAll()
+        [HttpPost("GetReportByWeekly")]
+        public async Task<ActionResult> GetWeeklyReport(int employeeId, DateOnly Date)
         {
             try
             {
-                var leaveRecordsList = await _leaveRepository.GetAllLeaves();
-
-                return Ok(leaveRecordsList);
+                var ReportList = await _reportRepository.GetWeeklyWorkHoursReportAsync(employeeId, Date);
+                return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)
             {
@@ -50,19 +40,15 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpGet("GetById")]
-        public async Task<ActionResult> GetById(int id)
+        [HttpPost("GetReportByMonthly")]
+        public async Task<ActionResult> GetMonthlyWorkHoursReportAsync(int employeeId, int month, int year)
         {
-            if(id <= 0)
-                return BadRequest("Invalid ID. It must be a positive number.");
-
             try
             {
-                var leaveRecord = await _leaveRepository.GetLeaveByID(id);
-
-                return Ok(leaveRecord);
+                var ReportList = await _reportRepository.GetMonthlyWorkHoursReportAsync(employeeId, month, year);
+                return Ok(ReportList);
             }
-            catch (DataNotFoundException<int> ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -76,45 +62,15 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Add(LeaveDTO leave)
+        [HttpPost("GetAllEmployeeReportByWeekly")]
+        public async Task<ActionResult> GetWeeklyReportOfAll(DateOnly Date)
         {
-            if (leave == null)
-                return BadRequest("Data is required.");
-
             try
             {
-                var employeeId = GetLoggedInUserId();
-                await _leaveRepository.AddLeave(employeeId, leave);
-
-                return Ok("Leave record created Successfully.");
+                var ReportList = await _reportRepository.GetWeeklyReportOfAllEmployee(Date);
+                return Ok(ReportList);
             }
-            catch (UnauthorizedAccessException ex)
-            {
-                return Unauthorized(new { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
-            }
-        }
-
-        [HttpPut]
-        public async Task<ActionResult> Update(int id, LeaveDTO leave)
-        {
-            if (id <= 0)
-                return BadRequest("Invalid ID. It must be a positive number.");
-
-            if (leave == null)
-                return BadRequest("Data is required.");
-
-            try
-            {
-                await _leaveRepository.UpdateLeave(id, leave);
-
-                return Ok("Leave record updated Successfully.");
-            }
-            catch (DataNotFoundException<int> ex)
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }
@@ -128,19 +84,37 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult> Delete(int id)
+        [HttpPost("GetAllEmployeeReportByMonthly")]
+        public async Task<ActionResult> GetMonthlyWorkHoursReportOfAll(int month, int year)
         {
-            if (id <= 0)
-                return BadRequest("Invalid ID. It must be a positive number.");
-
             try
             {
-                await _leaveRepository.DeleteLeave(id);
-
-                return Ok("Leave record deleted Successfully.");
+                var ReportList = await _reportRepository.GetMonthlyReportOfAllEmployee(month, year);
+                return Ok(ReportList);
             }
-            catch (DataNotFoundException<int> ex)
+            catch (DataNotFoundException<string> ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"An unexpected error occurred. : {ex.Message}" });
+            }
+        }
+
+        [HttpPost("GetCustomDateReport")]
+        public async Task<ActionResult> GetCustomReport(DateOnly startDate, DateOnly endDate)
+        {
+            try
+            {
+                var ReportList = await _reportRepository.GetCustomReport(startDate, endDate);
+                return Ok(ReportList);
+            }
+            catch (DataNotFoundException<string> ex)
             {
                 return NotFound(new { Message = ex.Message });
             }

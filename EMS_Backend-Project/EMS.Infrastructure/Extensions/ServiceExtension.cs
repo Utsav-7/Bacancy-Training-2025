@@ -1,4 +1,5 @@
-﻿using EMS_Backend_Project.EMS.Application.Interfaces.Authentication;
+﻿
+using EMS_Backend_Project.EMS.Application.Interfaces.Authentication;
 using EMS_Backend_Project.EMS.Application.Interfaces;
 using EMS_Backend_Project.EMS.Infrastructure.Services;
 using EMS_Backend_Project.EMS.Infrastructure.Repositories;
@@ -19,6 +20,8 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Extensions
             services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
             services.AddScoped<ILeaveRepository, LeaveRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IReportRepository, ReportRepository>();
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services)

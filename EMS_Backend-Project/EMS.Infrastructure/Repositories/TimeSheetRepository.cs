@@ -32,7 +32,9 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                          BreakTime = s.BreakTime,
                                                          WorkHours = s.TotalHours,
                                                          Description = s.Description
-                                                     }).ToListAsync();
+                                                     })
+                                                     .OrderByDescending(e => e.WorkDate)
+                                                     .ToListAsync();
 
             if (sheetList == null)
                 throw new DataNotFoundException<string>("No Time sheet found.");
@@ -40,9 +42,9 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return sheetList;
         }
 
-        public async Task<ICollection<EmployeeSheetDTO>> GetSheetById(int employeeId)
+        public async Task<ICollection<EmployeeSheetDTO>> GetSheetById(int userId)
         {
-            var getSheetList = await _context.TimeSheets.Where(s => s.EmployeeId == employeeId).Select(s => new EmployeeSheetDTO
+            var getSheetList = await _context.TimeSheets.Include(e => e.Employee).Where(s => s.Employee.UserId == userId).Select(s => new EmployeeSheetDTO
             {
                 TimeSheetId = s.TimeSheetId,
                 EmployeeId = s.EmployeeId,
@@ -52,10 +54,12 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                 BreakTime = s.BreakTime,
                 TotalWorkHours = s.TotalHours,
                 Description = s.Description
-            }).ToListAsync();
+            })
+            .OrderBy(d => d.WorkDate)
+            .ToListAsync();
 
             if (getSheetList == null)
-                throw new DataNotFoundException<int>(employeeId);
+                throw new DataNotFoundException<int>(userId);
 
             return getSheetList;
         }
@@ -119,12 +123,14 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
         public async Task UpdateSheet(int id, TimeSheetDTO timeSheet)
         {
-            var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.EmployeeId == id);
+            var existingSheet = await _context.TimeSheets.Include(e => e.Employee)
+                                                   .Where(s => s.Employee.UserId == id && s.WorkDate == timeSheet.WorkDate)
+                                                   .FirstOrDefaultAsync();
 
             if (existingSheet == null)
                 throw new DataNotFoundException<int>(id);
 
-            existingSheet.EmployeeId = id;
+            existingSheet.EmployeeId = existingSheet.EmployeeId;
             existingSheet.WorkDate = timeSheet.WorkDate;
             existingSheet.StartTime = timeSheet.StartTime;
             existingSheet.EndTime = timeSheet.EndTime;
@@ -133,6 +139,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             existingSheet.Description = timeSheet.Description;
 
             _context.TimeSheets.Update(existingSheet);
+
             await _context.SaveChangesAsync();
         }
 
