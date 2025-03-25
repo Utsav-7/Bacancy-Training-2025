@@ -149,6 +149,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                             {
                                                 TimeSheetId = s.TimeSheetId,
                                                 EmployeeName = $"{s.Employee.User.FirstName} {s.Employee.User.LastName}" ,
+                                                DepartmentName = s.Employee.Department.DepartmentName,
                                                 WorkDate = s.WorkDate,
                                                 StartTime = s.StartTime,
                                                 BreakTime = s.BreakTime,
@@ -208,6 +209,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                 {
                                                     TimeSheetId = s.TimeSheetId,
                                                     EmployeeName = $"{s.Employee.User.FirstName} {s.Employee.User.LastName}",
+                                                    DepartmentName = s.Employee.Department.DepartmentName,
                                                     WorkDate = s.WorkDate,
                                                     StartTime = s.StartTime,
                                                     BreakTime = s.BreakTime,
@@ -234,7 +236,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                 {
                     EmployeeId = employee.EmployeeId,
                     EmployeeName = $"{employee.User.FirstName} {employee.User.LastName}",
-                    Department = employee.Department?.DepartmentName,
+                    Department = employee.Department.DepartmentName,
                     TotalHours = weeklySheet.Sum(ts => ts.WorkHours.TotalHours),
                     TotalLeaveDays = totalLeaveDays,
                     WeekStartDate = startOfWeek,
@@ -265,7 +267,11 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             foreach (var employee in employees)
             {
                 // Get time sheets for the employee within the specified month
-                var TimeSheetList = await _context.TimeSheets.ToListAsync();
+                var TimeSheetList = await _context.TimeSheets
+                                                  .Where(ts => ts.EmployeeId == employee.EmployeeId &&
+                                                               ts.WorkDate >= startDate &&
+                                                               ts.WorkDate <= endDate)
+                                                  .ToListAsync();
 
                 // Get approved leaves for the employee within the month
                 var LeavesList = await _context.Leaves

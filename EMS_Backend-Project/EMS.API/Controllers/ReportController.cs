@@ -18,7 +18,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             _reportRepository = reportRepository;
         }
 
-        [HttpPost("GetReportByWeekly")]
+        [HttpGet("GetReportByWeekly")]
         public async Task<ActionResult> GetWeeklyReport(int employeeId, DateOnly Date)
         {
             try
@@ -40,7 +40,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpPost("GetReportByMonthly")]
+        [HttpGet("GetReportByMonthly")]
         public async Task<ActionResult> GetMonthlyWorkHoursReportAsync(int employeeId, int month, int year)
         {
             try
@@ -62,7 +62,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpPost("GetAllEmployeeReportByWeekly")]
+        [HttpGet("GetAllEmployeeReportByWeekly")]
         public async Task<ActionResult> GetWeeklyReportOfAll(DateOnly Date)
         {
             try
@@ -84,7 +84,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpPost("GetAllEmployeeReportByMonthly")]
+        [HttpGet("GetAllEmployeeReportByMonthly")]
         public async Task<ActionResult> GetMonthlyWorkHoursReportOfAll(int month, int year)
         {
             try
@@ -106,7 +106,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             }
         }
 
-        [HttpPost("GetCustomDateReport")]
+        [HttpGet("GetCustomDateReport")]
         public async Task<ActionResult> GetCustomReport(DateOnly startDate, DateOnly endDate)
         {
             try

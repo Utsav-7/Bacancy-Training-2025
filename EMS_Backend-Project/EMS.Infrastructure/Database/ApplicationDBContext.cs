@@ -23,7 +23,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Database
 
             // CHECK constraint for LeaveType
             modelBuilder.Entity<Leave>()
-                .ToTable(tb => tb.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('SickLeave', 'CasualLeave', 'Vacation', 'UnpaidLeave', 'Other')"));
+                .ToTable(tb => tb.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Other')"));
 
             // CHECK constraint for LeaveStatus
             modelBuilder.Entity<Leave>()
