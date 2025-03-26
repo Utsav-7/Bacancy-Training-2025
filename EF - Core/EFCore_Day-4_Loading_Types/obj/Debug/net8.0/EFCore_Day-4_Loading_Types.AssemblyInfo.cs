@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFCore_Day-4_Loading_Types")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502979a46c3fcedf22a73a812fb711e4c422ba42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9c9ac352ac28d1308867f9d9fddc43c0d449e02")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFCore_Day-4_Loading_Types")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFCore_Day-4_Loading_Types")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

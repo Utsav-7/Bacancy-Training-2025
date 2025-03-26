@@ -44,8 +44,8 @@ namespace EFCore_Day_4_Loading_Types.Controllers
         public IActionResult GetOrdersWithHighQuantityOrderProducts()
         {
             var orders = _dbContext.orders
-                                         .Include(o => o.customer) // Eagerly load Customers
-                                         .ToList();
+                                         .Include(o => o.customer); // Eagerly load Customers
+                                         //.ToList();
 
             Console.WriteLine("Orders fetched. OrderProducts will be explicitly loaded where Quantity > 5.");
 
@@ -71,10 +71,10 @@ namespace EFCore_Day_4_Loading_Types.Controllers
         {
             try
             {
-                var VIPCustomer = _dbContext.customers.Where(c => c.IsVIP == true).Include(o => o.orders).ToList();
+                var VIPCustomer = _dbContext.customers.Where(c => c.IsVIP == true).Include(o => o.orders);
+
                 foreach(var cust in VIPCustomer)
-                {
-                   
+                {  
                     if(cust.IsVIP)
                     {
                         foreach(var order in cust.orders)
@@ -83,6 +83,7 @@ namespace EFCore_Day_4_Loading_Types.Controllers
                         }
                     }
                 }
+
                 return Ok(VIPCustomer);
             }
             catch(Exception ex)
