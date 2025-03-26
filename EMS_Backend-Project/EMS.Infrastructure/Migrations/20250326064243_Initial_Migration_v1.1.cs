@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EMS_Backend_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class EMS_Initial_Migration_v10 : Migration
+    public partial class Initial_Migration_v11 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -79,7 +79,7 @@ namespace EMS_Backend_Project.Migrations
                     DepartmentId = table.Column<int>(type: "int", nullable: false),
                     DateOfBirth = table.Column<DateOnly>(type: "date", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: true),
-                    TeckStack = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    TechStack = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     JoinDate = table.Column<DateOnly>(type: "date", nullable: false),
                     RelievingDate = table.Column<DateOnly>(type: "date", nullable: true)
                 },
@@ -109,16 +109,17 @@ namespace EMS_Backend_Project.Migrations
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    LeaveType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalDays = table.Column<int>(type: "int", nullable: false),
+                    LeaveType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Reason = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     AppliedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Leaves", x => x.LeaveId);
-                    table.CheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('SickLeave', 'CasualLeave', 'Vacation', 'UnpaidLeave', 'Other')");
+                    table.CheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Others')");
                     table.CheckConstraint("CK_Leave_Status", "Status IN ('Pending', 'Approved', 'Rejected', 'Cancelled')");
                     table.ForeignKey(
                         name: "FK_Leaves_Employees_EmployeeId",
@@ -126,37 +127,6 @@ namespace EMS_Backend_Project.Migrations
                         principalTable: "Employees",
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ReportAnalyses",
-                columns: table => new
-                {
-                    ReportId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    ReportDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    TotalWorkedHours = table.Column<TimeSpan>(type: "time", nullable: false),
-                    AverageDailyHours = table.Column<TimeSpan>(type: "time", nullable: false),
-                    LeaveTaken = table.Column<int>(type: "int", nullable: false),
-                    ConsistencyTime = table.Column<double>(type: "float", nullable: false),
-                    DepartmentId = table.Column<int>(type: "int", nullable: false),
-                    PerformanceRating = table.Column<double>(type: "float", nullable: false),
-                    GeneratedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ReportAnalyses", x => x.ReportId);
-                    table.ForeignKey(
-                        name: "FK_ReportAnalyses_Departments_DepartmentId",
-                        column: x => x.DepartmentId,
-                        principalTable: "Departments",
-                        principalColumn: "DepartmentId");
-                    table.ForeignKey(
-                        name: "FK_ReportAnalyses_Employees_EmployeeId",
-                        column: x => x.EmployeeId,
-                        principalTable: "Employees",
-                        principalColumn: "EmployeeId");
                 });
 
             migrationBuilder.CreateTable(
@@ -211,16 +181,6 @@ namespace EMS_Backend_Project.Migrations
                 column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReportAnalyses_DepartmentId",
-                table: "ReportAnalyses",
-                column: "DepartmentId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReportAnalyses_EmployeeId",
-                table: "ReportAnalyses",
-                column: "EmployeeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TimeSheets_EmployeeId",
                 table: "TimeSheets",
                 column: "EmployeeId");
@@ -242,9 +202,6 @@ namespace EMS_Backend_Project.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Leaves");
-
-            migrationBuilder.DropTable(
-                name: "ReportAnalyses");
 
             migrationBuilder.DropTable(
                 name: "TimeSheets");

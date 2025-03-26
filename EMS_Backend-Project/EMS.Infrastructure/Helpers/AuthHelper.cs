@@ -11,11 +11,11 @@ using EMS_Backend_Project.EMS.Common.CustomExceptions;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Services
 {
-    public class AuthService : Repository<User>, IAuthService
+    public class AuthHelper : Repository<User>, IAuthService
     {
         private readonly IEmailService _emailService;
 
-        public AuthService(IEmailService emailService, ApplicationDBContext context) : base(context)
+        public AuthHelper(IEmailService emailService, ApplicationDBContext context) : base(context)
         {
             _emailService = emailService;
         }

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using EMS_Backend_Project.EMS.Application.DTOs.EmployeeDTOs;
 using EMS_Backend_Project.EMS.Application.DTOs.UserDTOs;
-using EMS_Backend_Project.EMS.Application.Interfaces;
+using EMS_Backend_Project.EMS.Application.Interfaces.EmployeeDashboard;
 using EMS_Backend_Project.EMS.Common.CustomExceptions;
 using EMS_Backend_Project.EMS.Domain.Entities;
 using EMS_Backend_Project.EMS.Infrastructure.Database;
@@ -17,12 +17,12 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             _mapper = mapper;
         }
 
-        public async Task<EmployeeDataDTO> GetProfileData(int id)
+        public async Task<GetEmployeeDataDTO> GetProfileDataQuery(int id)
         {
             var employeeData = await _context.Users.Include(s => s.Employee)
                                                         .ThenInclude(d => d.Department)
                                                    .Where(c => c.UserId == id)
-                                                   .Select(s => new EmployeeDataDTO
+                                                   .Select(s => new GetEmployeeDataDTO
                                                    {
                                                        FirstName = s.FirstName,
                                                        LastName = s.LastName,
@@ -31,7 +31,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                                        DateOfBirth = s.Employee.DateOfBirth,
                                                        Address = s.Employee.Address,
                                                        DepartmentName = s.Employee.Department.DepartmentName,
-                                                       TeckStack = s.Employee.TeckStack,
+                                                       TeckStack = s.Employee.TechStack,
                                                        JoinDate = s.Employee.JoinDate
                                                    }).FirstOrDefaultAsync();
 
@@ -41,7 +41,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return employeeData;
         }
 
-        public async Task UpdateProfile(int id, EmployeeUpdateDTO employeeUpdate)
+        public async Task UpdateProfileQuery(int id, EmployeeUpdateDTO employeeUpdate)
         {
             // Include Employee when fetching User
             var existingUser = await _context.Users
@@ -53,20 +53,25 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
             // Map the DTO to the existing entities (this preserves unchanged values)
             _mapper.Map(employeeUpdate, existingUser);
-            _mapper.Map(employeeUpdate, existingUser.Employee); 
+            if (existingUser.Employee != null)
+            {
+                _mapper.Map(employeeUpdate, existingUser.Employee);
+            }
 
             // Set audit fields
             existingUser.UpdatedAt = DateTime.UtcNow;
 
             // If any properties needs special handling
             existingUser.PhoneNo = employeeUpdate.PhoneNo;
-            existingUser.Employee.TeckStack = employeeUpdate.TechStack;
-           
+            if (existingUser.Employee != null)
+            {
+                existingUser.Employee.TechStack = employeeUpdate.TechStack;
+            }
             // Since we're working with existing entities, we don't need separate Update calls
             await _context.SaveChangesAsync();
         }
 
-        public async Task ChangePassword(int id, EmployeePwdUpdateDTO employeePwdUpdate)
+        public async Task ChangePasswordQuery(int id, EmployeePwdUpdateDTO employeePwdUpdate)
         {
             var employee = await _context.Users.FindAsync(id);
 

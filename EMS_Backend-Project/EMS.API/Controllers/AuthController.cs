@@ -19,8 +19,8 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login(UserLoginDTO userLoginDTO)
         {
-            if (userLoginDTO == null)
-                return BadRequest("Login Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
@@ -40,8 +40,8 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("ForgotPassword")]
         public async Task<ActionResult<string>> ForgotPassword(ForgotPwdDTO forgotPwdDTO)
         {
-            if (forgotPwdDTO == null)
-                return BadRequest(new { Message = "Email ID is required for password reset." });
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
@@ -61,8 +61,8 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("ResetPassword")]
         public async Task<ActionResult<string>> ResetPassword(ResetPwdDTO resetPwdDTO)
         {
-            if (resetPwdDTO == null)
-                return BadRequest(new { Message = "Insufficient Information." });
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {

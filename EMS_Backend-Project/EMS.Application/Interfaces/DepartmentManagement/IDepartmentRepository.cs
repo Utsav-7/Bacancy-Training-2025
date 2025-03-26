@@ -4,10 +4,10 @@ namespace EMS_Backend_Project.EMS.Application.Interfaces.DepartmentManagement
 {
     public interface IDepartmentRepository
     {
-        Task<ICollection<GetDepartmentDTO>> GetAllDepartment();
-        Task<GetDepartmentDTO> GetDepartmentById(int id);
-        Task UpdateDepartment(int id, string name);
-        Task AddDepartment(string name);
-        Task DeleteDepartment(int id);
+        Task<ICollection<GetDepartmentDTO>> GetAllDepartmentQuery();
+        Task<GetDepartmentDTO> GetDepartmentByIdQuery(int id);
+        Task UpdateDepartmentQuery(int id, string name);
+        Task AddDepartmentQuery(string name);
+        Task DeleteDepartmentQuery(int id);
     }
 }

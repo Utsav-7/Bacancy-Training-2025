@@ -22,7 +22,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             _mapper = mapper;
         }
 
-        public async Task<ICollection<UserDTO>> GetAllUser()
+        public async Task<ICollection<UserDTO>> GetAllUserQuery()
         {
             var usersList = await _context.Users.Where(c => c.IsDeleted == false).Select(s => new UserDTO
             {
@@ -42,7 +42,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return usersList;
         }
 
-        public async Task<UserDTO> GetUserById(int id)
+        public async Task<UserDTO> GetUserByIdQuery(int id)
         {
             var user = await _context.Users.Where(c => c.UserId == id && c.IsDeleted == false).Select(s => new UserDTO
             {
@@ -62,7 +62,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return user;
         }
 
-        public async Task AddAdmin(AdminUserDTO adminUserDTO)
+        public async Task AddAdminQuery(AdminUserDTO adminUserDTO)
         {
             var existingUser = _context.Users.FirstOrDefault(s => s.Email == adminUserDTO.Email);
 
@@ -105,7 +105,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _emailService.SendUserRegistrationEmailAsync(adminUserDTO.Email, adminUserDTO.Password);
         }
 
-        public async Task AddEmployee(EmplyeeUserDTO emplyeeUserDTO)
+        public async Task AddEmployeeQuery(EmplyeeUserDTO emplyeeUserDTO)
         {
             var roleExists = await _context.Departments.AnyAsync(r => r.DepartmentId == emplyeeUserDTO.DepartmentId);
             if (!roleExists)
@@ -155,7 +155,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _emailService.SendUserRegistrationEmailAsync(emplyeeUserDTO.Email, emplyeeUserDTO.Password);
         }
 
-        public async Task UpdateAdminById(int id, AdminUserDTO adminUserDTO)
+        public async Task UpdateAdminByIdQuery(int id, AdminUserDTO adminUserDTO)
         {
             var checkEmail = await _context.Users.FirstOrDefaultAsync(s => s.Email == adminUserDTO.Email && s.UserId != id);
 
@@ -179,63 +179,55 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateEmployeeById(int id, EmplyeeUserDTO emplyeeUserDTO)
+        public async Task UpdateEmployeeByIdQuery(int id, EmplyeeUserDTO emplyeeUserDTO)
         {
-            var checkEmail = await _context.Users.FirstOrDefaultAsync(s => s.Email == emplyeeUserDTO.Email && s.UserId != id);
-            
+            // Check if email is already in use by another user
+            var checkEmail = await _context.Users
+                .FirstOrDefaultAsync(s => s.Email == emplyeeUserDTO.Email && s.UserId != id);
+
             if (checkEmail != null)
                 throw new AlreadyExistsException<string>(checkEmail.Email);
 
             // Fetch existing User with Employee details
             var existingUser = await _context.Users
-                .Include(u => u.Employee)
+                .Include(u => u.Employee)  // Ensure Employee entity is loaded
                 .FirstOrDefaultAsync(u => u.UserId == id && u.RoleId == 2);
 
             if (existingUser == null)
                 throw new DataNotFoundException<int>(id);
 
-            // Update User entity
-            existingUser.FirstName = emplyeeUserDTO.FirstName ?? existingUser.FirstName;
-            existingUser.LastName = emplyeeUserDTO.LastName ?? existingUser.LastName;
-            existingUser.Email = emplyeeUserDTO.Email ?? existingUser.Email;
-            existingUser.PhoneNo = emplyeeUserDTO.PhoneNo ?? existingUser.PhoneNo;
-            existingUser.Employee.Address = emplyeeUserDTO.Address ?? existingUser.Employee.Address;
-            existingUser.Active = emplyeeUserDTO.Active;
-            existingUser.UpdatedAt = DateTime.UtcNow;
+            // Use AutoMapper to update User entity
+            _mapper.Map(emplyeeUserDTO, existingUser);
+            existingUser.UpdatedAt = DateTime.UtcNow; // Ensure timestamp updates
 
-            if (emplyeeUserDTO.DateOfBirth != default)
-                existingUser.Employee.DateOfBirth = emplyeeUserDTO.DateOfBirth;
-
-            // Hash the password only if a new one is provided
-            if (!string.IsNullOrEmpty(emplyeeUserDTO.Password))
+            // Update Password only if a new one is provided
+            if (!string.IsNullOrWhiteSpace(emplyeeUserDTO.Password))
             {
                 var passwordHasher = new PasswordHasher<User>();
                 existingUser.Password = passwordHasher.HashPassword(existingUser, emplyeeUserDTO.Password);
             }
 
-            // Check if Employee exists and update it
+            // Ensure Employee entity exists before modifying it
             if (existingUser.Employee != null)
             {
-                existingUser.Employee.DepartmentId = emplyeeUserDTO.DepartmentId;
-                existingUser.Employee.TeckStack = emplyeeUserDTO.TeckStack ?? existingUser.Employee.TeckStack;
+                _mapper.Map(emplyeeUserDTO, existingUser.Employee);
+
+                // Update nullable fields separately to avoid overwriting with default values
+                if (emplyeeUserDTO.DateOfBirth != default)
+                    existingUser.Employee.DateOfBirth = emplyeeUserDTO.DateOfBirth;
 
                 if (emplyeeUserDTO.JoinDate != default)
                     existingUser.Employee.JoinDate = emplyeeUserDTO.JoinDate;
 
                 if (emplyeeUserDTO.RelievingDate != default)
                     existingUser.Employee.RelievingDate = emplyeeUserDTO.RelievingDate;
-
-                _context.Entry(existingUser.Employee).State = EntityState.Modified;
             }
 
-            // Mark User entity as modified
-            _context.Entry(existingUser).State = EntityState.Modified;
-
-            // Save changes
+            // Save changes (EF Core tracks updates automatically)
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserById(int id)
+        public async Task DeleteUserByIdQuery(int id)
         {
             var existingUser = await _context.Users.FindAsync(id);
 

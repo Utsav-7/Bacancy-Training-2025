@@ -12,11 +12,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
-        private readonly IDepartmentRepository _departmentRepository;
+        private readonly IDepartmentService _departmentService;
 
-        public DepartmentController(IDepartmentRepository departmentRepository)
+        public DepartmentController(IDepartmentService departmentService)
         {
-            _departmentRepository = departmentRepository;
+            _departmentService = departmentService;
         }
 
         [HttpGet("GetAll")]
@@ -24,7 +24,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var departmentList = await _departmentRepository.GetAllDepartment();
+                var departmentList = await _departmentService.GetAllDepartmentAsync();
                 return Ok(departmentList);
             }
             catch (DataNotFoundException<string> ex)
@@ -46,7 +46,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var department = await _departmentRepository.GetDepartmentById(id);
+                var department = await _departmentService.GetDepartmentByIdAsync(id);
                 return Ok(department);
             }
             catch (DataNotFoundException<int> ex)
@@ -68,7 +68,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                await _departmentRepository.AddDepartment(name);
+                await _departmentService.AddDepartmentAsync(name);
                 return Ok("Department Created Successfully.");
             }
             catch (AlreadyExistsException<string> ex)
@@ -90,7 +90,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                await _departmentRepository.UpdateDepartment(id, name);
+                await _departmentService.UpdateDepartmentAsync(id, name);
                 return Ok("Department Updated Successfully.");
             }
             catch (DataNotFoundException<int> ex)
@@ -112,7 +112,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                await _departmentRepository.DeleteDepartment(id);
+                await _departmentService.DeleteDepartmentAsync(id);
                 return Ok("Department Deleted Successfully.");
             }
             catch (DataNotFoundException<int> ex)

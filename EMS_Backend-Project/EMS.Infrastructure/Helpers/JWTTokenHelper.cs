@@ -6,10 +6,10 @@ using System.Text;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Services
 {
-    public class TokenService
+    public class JWTTokenHelper
     {
         public readonly IConfiguration _configuration;
-        public TokenService(IConfiguration configuration)
+        public JWTTokenHelper(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -26,7 +26,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
-                new Claim(ClaimTypes.Email, login.email),
+                new Claim(ClaimTypes.Email, login.Email),
                 new Claim(ClaimTypes.Role, newRole)
             };
 

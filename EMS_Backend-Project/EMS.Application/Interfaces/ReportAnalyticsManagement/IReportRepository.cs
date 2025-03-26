@@ -4,10 +4,10 @@ namespace EMS_Backend_Project.EMS.Application.Interfaces.ReportAnalyticsManageme
 {
     public interface IReportRepository
     {
-        Task<WeeklyWorkHoursReportDTO> GetWeeklyWorkHoursReportAsync(int employeeId, DateOnly date);
-        Task<MonthlyWorkHoursReportDTO> GetMonthlyWorkHoursReportAsync(int employeeId, int month, int year);
-        Task<ICollection<WeeklyWorkHoursReportDTO>> GetWeeklyReportOfAllEmployee(DateOnly date);
-        Task<ICollection<MonthlyWorkHoursReportDTO>> GetMonthlyReportOfAllEmployee(int month, int year);
-        Task<ICollection<MonthlyWorkHoursReportDTO>> GetCustomReport(DateOnly startDate, DateOnly endDate);
+        Task<WeeklyWorkHoursReportDTO> GetWeeklyWorkHoursReportQuery(int employeeId, DateOnly date);
+        Task<MonthlyWorkHoursReportDTO> GetMonthlyWorkHoursReportQuery(int employeeId, int month, int year);
+        Task<ICollection<WeeklyWorkHoursReportDTO>> GetWeeklyReportOfAllEmployeeQuery(DateOnly date);
+        Task<ICollection<MonthlyWorkHoursReportDTO>> GetMonthlyReportOfAllEmployeeQuery(int month, int year);
+        Task<ICollection<MonthlyWorkHoursReportDTO>> GetCustomReportQuery(DateOnly startDate, DateOnly endDate);
     }
 }

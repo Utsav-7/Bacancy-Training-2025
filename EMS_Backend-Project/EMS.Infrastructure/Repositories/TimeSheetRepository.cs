@@ -16,7 +16,8 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
         {
         }
 
-        public async Task<ICollection<GetTimeSheetDTO>> GetAllSheets()
+
+        public async Task<ICollection<GetTimeSheetDTO>> GetAllSheetsQuery()
         {
             var sheetList = await _context.TimeSheets.Include(s => s.Employee)
                                                      .ThenInclude(u => u.User)
@@ -42,9 +43,9 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return sheetList;
         }
 
-        public async Task<ICollection<EmployeeSheetDTO>> GetSheetById(int userId)
+        public async Task<ICollection<GetEmployeeSheetDTO>> GetSheetByIdQuery(int userId)
         {
-            var getSheetList = await _context.TimeSheets.Include(e => e.Employee).Where(s => s.Employee.UserId == userId).Select(s => new EmployeeSheetDTO
+            var getSheetList = await _context.TimeSheets.Include(e => e.Employee).Where(s => s.Employee.UserId == userId).Select(s => new GetEmployeeSheetDTO
             {
                 TimeSheetId = s.TimeSheetId,
                 EmployeeId = s.EmployeeId,
@@ -64,7 +65,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return getSheetList;
         }
 
-        public async Task<GetTimeSheetDTO> GetSheetByIdAndDate(int employeeId, DateOnly workDate)
+        public async Task<GetTimeSheetDTO> GetSheetByIdAndDateQuery(int employeeId, DateOnly workDate)
 
         {
             var sheet = await _context.TimeSheets.Include(s => s.Employee)
@@ -90,9 +91,10 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return sheet;
         }
 
-        public async Task AddSheet(int userId, TimeSheetDTO timeSheet)
+        public async Task AddSheetQuery(int userId, TimeSheetDTO timeSheet)
         {
-            var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.EmployeeId == timeSheet.EmployeeId && s.WorkDate == timeSheet.WorkDate);
+            // Check Timesheet already exist in db 
+            var existingSheet = _context.TimeSheets.FirstOrDefault(s => s.Employee.UserId == userId && s.WorkDate == timeSheet.WorkDate);
 
             var employee = await _context.Employees.FirstOrDefaultAsync(s => s.UserId == userId || s.UserId == timeSheet.EmployeeId);
             var newId = employee?.EmployeeId ?? timeSheet.EmployeeId;
@@ -121,7 +123,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateSheet(int id, TimeSheetDTO timeSheet)
+        public async Task UpdateSheetQuery(int id, TimeSheetDTO timeSheet)
         {
             var existingSheet = await _context.TimeSheets.Include(e => e.Employee)
                                                    .Where(s => s.Employee.UserId == id && s.WorkDate == timeSheet.WorkDate)
@@ -143,7 +145,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteSheet(int id, DateOnly date)
+        public async Task DeleteSheetQuery(int id, DateOnly date)
         {
             var existingSheet = await _context.TimeSheets.FirstOrDefaultAsync(s => s.EmployeeId == id && s.WorkDate == date);
 
@@ -154,7 +156,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<FileContentResult> ExportAllRecords()
+        public async Task<FileContentResult> ExportAllRecordsQuery()
         {
             var sheetList = await _context.TimeSheets.Include(s => s.Employee)
                                          .ThenInclude(u => u.User)
@@ -173,7 +175,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                                          }).ToListAsync();
 
 
-            byte[] fileBytes = ExcelExporter.ExportToExcel(sheetList);
+            byte[] fileBytes = ExcelExportHelper.ExportToExcel(sheetList);
 
             return new FileContentResult(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
             {

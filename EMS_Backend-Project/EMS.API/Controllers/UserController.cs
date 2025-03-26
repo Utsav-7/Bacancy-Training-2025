@@ -13,10 +13,10 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository)
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
-            _userRepository = userRepository;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var usersList = await _userRepository.GetAllUser();
+                var usersList = await _userService.GetAllUserAsync();
 
                 if (usersList == null)
                     throw new KeyNotFoundException("No User found.");
@@ -50,7 +50,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var users = await _userRepository.GetUserById(id);
+                var users = await _userService.GetUserByIdAsync(id);
 
                 if (users == null)
                     throw new KeyNotFoundException("No User found.");
@@ -74,11 +74,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("Admin")]
         public async Task<ActionResult<string>> AddAdmin(AdminUserDTO adminUser)
         {
-            if (adminUser == null)
-                return BadRequest("Admin Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                await _userRepository.AddAdmin(adminUser);
+                await _userService.AddAdminAsync(adminUser);
 
                 return "New Admin Created Successfully. And Credentials will send in Registered Email.";
             }
@@ -99,11 +99,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("Employee")]
         public async Task<ActionResult<string>> AddEmployee(EmplyeeUserDTO emplyeeUser)
         {
-            if (emplyeeUser == null)
-                return BadRequest("Employee Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                await _userRepository.AddEmployee(emplyeeUser);
+                await _userService.AddEmployeeAsync(emplyeeUser);
 
                 return "New Employee Created Successfully. And Credentials will send in Registered Email.";
             }
@@ -124,11 +124,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPut("Admin/{id}")]
         public async Task<ActionResult<string>> UpdateAdmin(int id, AdminUserDTO adminUser)
         {
-            if (adminUser == null)
-                return BadRequest("Admin Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                await _userRepository.UpdateAdminById(id,adminUser);
+                await _userService.UpdateAdminByIdAsync(id,adminUser);
 
                 return "Admin Updated Successfully.";
             }
@@ -153,11 +153,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPut("Employee/{id}")]
         public async Task<ActionResult<string>> UpdateEmployee(int id, EmplyeeUserDTO emplyeeUser)
         {
-            if (emplyeeUser == null)
-                return BadRequest("Employee Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                await _userRepository.UpdateEmployeeById(id, emplyeeUser);
+                await _userService.UpdateEmployeeByIdAsync(id, emplyeeUser);
 
                 return "Employee Updated Successfully.";
             }
@@ -184,7 +184,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                await _userRepository.DeleteUserById(id);
+                await _userService.DeleteUserByIdAsync(id);
 
                 return "User Deleted Successfully.";
             }

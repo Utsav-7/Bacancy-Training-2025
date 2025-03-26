@@ -2,7 +2,7 @@
 using EMS_Backend_Project.EMS.Application.DTOs.EmployeeDTOs;
 using EMS_Backend_Project.EMS.Application.DTOs.LeavesDTOs;
 using EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs;
-using EMS_Backend_Project.EMS.Application.Interfaces;
+using EMS_Backend_Project.EMS.Application.Interfaces.EmployeeDashboard;
 using EMS_Backend_Project.EMS.Application.Interfaces.LeaveManagement;
 using EMS_Backend_Project.EMS.Application.Interfaces.TimeSheetManagement;
 using EMS_Backend_Project.EMS.Common.CustomExceptions;
@@ -17,15 +17,15 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly ILeaveRepository _leaveRepository;
-        private readonly ITimeSheetRepository _timeSheetRepository;
-        private readonly IEmployeeRepository _employeeRepository;
+        private readonly ILeaveService _leaveService;
+        private readonly ITimeSheetService _timeSheetService;
+        private readonly IEmployeeService _employeeService;
 
-        public EmployeeController(ILeaveRepository leaveRepository, ITimeSheetRepository timeSheetRepository, IEmployeeRepository employeeRepository)
+        public EmployeeController(ILeaveService leaveService, ITimeSheetService timeSheetService, IEmployeeService employeeService)
         {
-            _leaveRepository = leaveRepository;
-            _timeSheetRepository = timeSheetRepository;
-            _employeeRepository = employeeRepository;
+            _leaveService = leaveService;
+            _timeSheetService = timeSheetService;
+            _employeeService = employeeService;
         }
 
         // Extract the logged-in user's ID from the JWT token   
@@ -41,7 +41,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             try
             {
                 var loginUser = GetLoggedInUserId();
-                var profileData = await _employeeRepository.GetProfileData(loginUser);
+                var profileData = await _employeeService.GetProfileDataAsync(loginUser);
 
                 return Ok(profileData);
             }
@@ -62,13 +62,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPut("UpdateProfile")]
         public async Task<ActionResult> UpdateProfile(EmployeeUpdateDTO employeeUpdate)
         {
-            if (employeeUpdate == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             
             try
             {
                 var loggedUser = GetLoggedInUserId();
-                await _employeeRepository.UpdateProfile(loggedUser, employeeUpdate);
+                await _employeeService.UpdateProfileAsync(loggedUser, employeeUpdate);
 
                 return Ok("Your Data has been updated.");
             }
@@ -92,7 +92,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             try
             {
                 var loggedUser = GetLoggedInUserId();
-                var leaveRecord = await _leaveRepository.GetLeaveByID(loggedUser);
+                var leaveRecord = await _leaveService.GetLeaveByIDAsync(loggedUser);
 
                 return Ok(leaveRecord);
             }
@@ -113,13 +113,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("TakeLeave")]
         public async Task<ActionResult> Add(LeaveDTO leave)
         {
-            if (leave == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
                 var employeeId = GetLoggedInUserId();
-                await _leaveRepository.AddLeave(employeeId, leave);
+                await _leaveService.AddLeaveAsync(employeeId, leave);
 
                 return Ok("Leave record created Successfully.");
             }
@@ -139,7 +139,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             try
             {
                 int currentUser = GetLoggedInUserId();
-                var sheetList = await _timeSheetRepository.GetSheetById(currentUser);
+                var sheetList = await _timeSheetService.GetSheetByIdAsync(currentUser);
 
                 return Ok(sheetList);
             }
@@ -160,13 +160,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost("CreateTimeSheet")]
         public async Task<ActionResult> AddTimeSheet(TimeSheetDTO timeSheet)
         {
-            if (timeSheet == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
                 var employeeId = GetLoggedInUserId();
-                await _timeSheetRepository.AddSheet(employeeId, timeSheet);
+                await _timeSheetService.AddSheetAsync(employeeId, timeSheet);
 
                 return Ok("Time Sheet Created Successfully.");
             }
@@ -187,13 +187,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPut("UpdateTimeSheet")]
         public async Task<ActionResult> Update(TimeSheetDTO timeSheet)
         {
-            if (timeSheet == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
                 var loggedUser = GetLoggedInUserId();
-                await _timeSheetRepository.UpdateSheet(loggedUser, timeSheet);
+                await _timeSheetService.UpdateSheetAsync(loggedUser, timeSheet);
 
                 return Ok("Time Sheet Updated Successfully.");
             }
@@ -214,8 +214,8 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPut("ChangePassword")]
         public async Task<ActionResult> ChangePassword(EmployeePwdUpdateDTO employeePwdUpdate)
         {
-            if (employeePwdUpdate == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             if (employeePwdUpdate.NewPassword != employeePwdUpdate.ConfirmPassword)
                 return BadRequest("New Password and Confirm Password is not matching.");
@@ -223,7 +223,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             try
             {
                 var loggedUser = GetLoggedInUserId();
-                await _employeeRepository.ChangePassword(loggedUser, employeePwdUpdate);
+                await _employeeService.ChangePasswordAsync(loggedUser, employeePwdUpdate);
 
                 return Ok("Your Password will be updated Successfully.");
             }

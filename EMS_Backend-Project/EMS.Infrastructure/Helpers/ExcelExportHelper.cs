@@ -8,7 +8,7 @@ using OfficeOpenXml;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Services
 {
-    public static class ExcelExporter
+    public static class ExcelExportHelper
     {
         public static byte[] ExportToExcel<T>(List<T> data)
         {

@@ -14,10 +14,10 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class TimeSheetController : ControllerBase
     {
-        private readonly ITimeSheetRepository _timeSheetRepository;
-        public TimeSheetController(ITimeSheetRepository timeSheetRepository)
+        private readonly ITimeSheetService _timeSheetService;
+        public TimeSheetController(ITimeSheetService timeSheetService)
         {
-            _timeSheetRepository = timeSheetRepository;
+            _timeSheetService = timeSheetService;
         }
 
         // Extract the logged-in user's ID from the JWT token   
@@ -32,7 +32,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var list = await _timeSheetRepository.GetAllSheets();
+                var list = await _timeSheetService.GetAllSheetsAsync();
 
                 return Ok(list);
             }
@@ -58,7 +58,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                var sheet = await _timeSheetRepository.GetSheetByIdAndDate(id, date);
+                var sheet = await _timeSheetService.GetSheetByIdAndDateAsync(id, date);
 
                 return Ok(sheet);
             }
@@ -79,13 +79,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(TimeSheetDTO timeSheet)
         {
-            if (timeSheet == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
-                var employeeId = GetLoggedInUserId();
-                await _timeSheetRepository.AddSheet(employeeId, timeSheet);
+                var userId = GetLoggedInUserId();
+                await _timeSheetService.AddSheetAsync(userId, timeSheet);
 
                 return Ok("Time Sheet Created Successfully.");
             }
@@ -109,12 +109,12 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             if (employeeId <= 0)
                 return BadRequest("Invalid ID. It must be a positive number.");
 
-            if (timeSheet == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
-                await _timeSheetRepository.UpdateSheet(employeeId, timeSheet);
+                await _timeSheetService.UpdateSheetAsync(employeeId, timeSheet);
 
                 return Ok("Time Sheet Updated Successfully.");
             }
@@ -140,7 +140,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                await _timeSheetRepository.DeleteSheet(id, date);
+                await _timeSheetService.DeleteSheetAsync(id, date);
 
                 return Ok("Time Sheet Deleted Successfully.");
             }
@@ -163,7 +163,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var sheetList = await _timeSheetRepository.ExportAllRecords();
+                var sheetList = await _timeSheetService.ExportAllRecordsAsync();
 
                 return sheetList;
             }

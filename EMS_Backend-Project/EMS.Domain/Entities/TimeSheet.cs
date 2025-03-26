@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using EMS_Backend_Project.EMS.Domain.Common.Validation;
 
 namespace EMS_Backend_Project.EMS.Domain.Entities
@@ -18,6 +19,7 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
         public TimeSpan StartTime { get; set; }
 
         [Required(ErrorMessage = "End Time is required.")]
+        [CustomValidation(typeof(TimeSheet), nameof(ValidateStartAndEndTime))]
         public TimeSpan EndTime { get; set; }
 
         [Range(typeof(TimeSpan), "00:00:00", "12:00:00", ErrorMessage = "Break time should be between 0 and 12 hours.")]
@@ -36,10 +38,21 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
                 var workDuration = EndTime - StartTime;
                 return workDuration > BreakTime ? workDuration - BreakTime : TimeSpan.Zero;
             }
-            set;
+            set { }
         }
 
         // Navigation Property
         public virtual Employee Employee { get; set; }
+
+        // Custom Validation for StartTime < EndTime
+        public static ValidationResult? ValidateStartAndEndTime(TimeSpan endTime, ValidationContext context)
+        {
+            var instance = (TimeSheet)context.ObjectInstance;
+            if (endTime <= instance.StartTime)
+            {
+                return new ValidationResult("End Time must be greater than Start Time.");
+            }
+            return ValidationResult.Success;
+        }
     }
 }

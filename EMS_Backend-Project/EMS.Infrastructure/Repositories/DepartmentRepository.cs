@@ -12,7 +12,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
     {
         public DepartmentRepository(ApplicationDBContext context) : base(context) {}
 
-        public async Task<ICollection<GetDepartmentDTO>> GetAllDepartment()
+        public async Task<ICollection<GetDepartmentDTO>> GetAllDepartmentQuery()
         {
             var departmentList = await _context.Employees.Include(e => e.Department)
                                                            .GroupBy(g => new { g.DepartmentId, g.Department.DepartmentName}) 
@@ -29,13 +29,14 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return departmentList;
         }
 
-        public async Task<GetDepartmentDTO> GetDepartmentById(int id)
+        public async Task<GetDepartmentDTO> GetDepartmentByIdQuery(int id)
         {
             var department = await _context.Departments.Include(e => e.Employees)
                 .Where(c => c.DepartmentId == id)
                 .GroupBy(g => g.DepartmentName)
                 .Select(s => new GetDepartmentDTO
                 {
+                    DepartmentId = id,
                     DepartmentName = s.Key,
                     TotalEmployee = s.Count()
                 }).FirstOrDefaultAsync();
@@ -46,7 +47,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return department;
         }
 
-        public async Task AddDepartment(string name)
+        public async Task AddDepartmentQuery(string name)
         {
             var existingDepartment = await _context.Departments.FirstOrDefaultAsync(s => s.DepartmentName == name);
 
@@ -63,7 +64,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateDepartment(int id, string name)
+        public async Task UpdateDepartmentQuery(int id, string name)
         {
             var existingDepartment = await _context.Departments.FindAsync(id);
 
@@ -77,7 +78,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteDepartment(int id)
+        public async Task DeleteDepartmentQuery(int id)
         {
             var existingDepartment = await _context.Departments.FindAsync(id);
 

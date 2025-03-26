@@ -12,7 +12,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
     {
         public LeaveRepository(ApplicationDBContext context) : base(context){}
 
-        public async Task<ICollection<GetLeaveDTO>> GetAllLeaves()
+        public async Task<ICollection<GetLeaveDTO>> GetAllLeavesQuery()
         {
             var leaveRecords = await _context.Leaves
                                             .Include(s => s.Employee)
@@ -37,7 +37,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
             return leaveRecords;
         }
-        public async Task<ICollection<GetLeaveDTO>> GetLeaveByID(int id)
+        public async Task<ICollection<GetLeaveDTO>> GetLeaveByIDQuery(int id)
         {
             var leaveRecord = await _context.Leaves.Include(s => s.Employee)
                                                                 .ThenInclude(u => u.User)
@@ -62,7 +62,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
             return leaveRecord;
         }
-        public async Task AddLeave(int employeeId, LeaveDTO leave)
+        public async Task AddLeaveQuery(int employeeId, LeaveDTO leave)
         {
 
             var employee = await _context.Employees.FirstOrDefaultAsync(s => s.UserId == employeeId || s.UserId == leave.EmployeeId);
@@ -89,8 +89,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
             await _context.SaveChangesAsync();
         }
-
-        public async Task UpdateLeave(int id, LeaveDTO leave)
+        public async Task UpdateLeaveQuery(int id, LeaveDTO leave)
         {
             var existingRecord = await _context.Leaves.FindAsync(id);
 
@@ -109,8 +108,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             _context.Leaves.Update(existingRecord);
             await _context.SaveChangesAsync();
         }
-
-        public async Task DeleteLeave(int id)
+        public async Task DeleteLeaveQuery(int id)
         {
             var existingLeave = await _context.Leaves.FindAsync(id);
 

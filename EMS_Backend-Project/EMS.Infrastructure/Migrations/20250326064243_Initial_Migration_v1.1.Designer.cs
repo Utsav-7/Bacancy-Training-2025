@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EMS_Backend_Project.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250322142249_EMS_Initial_Migration_v1.2")]
-    partial class EMS_Initial_Migration_v12
+    [Migration("20250326064243_Initial_Migration_v1.1")]
+    partial class Initial_Migration_v11
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,7 +73,7 @@ namespace EMS_Backend_Project.Migrations
                     b.Property<DateOnly?>("RelievingDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("TeckStack")
+                    b.Property<string>("TechStack")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -109,7 +109,8 @@ namespace EMS_Backend_Project.Migrations
 
                     b.Property<string>("LeaveType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(250)
@@ -120,7 +121,8 @@ namespace EMS_Backend_Project.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("TotalDays")
                         .HasColumnType("int");
@@ -134,54 +136,10 @@ namespace EMS_Backend_Project.Migrations
 
                     b.ToTable("Leaves", t =>
                         {
-                            t.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('SickLeave', 'CasualLeave', 'Vacation', 'UnpaidLeave', 'Other')");
+                            t.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Others')");
 
                             t.HasCheckConstraint("CK_Leave_Status", "Status IN ('Pending', 'Approved', 'Rejected', 'Cancelled')");
                         });
-                });
-
-            modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.ReportAnalysis", b =>
-                {
-                    b.Property<int>("ReportId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReportId"));
-
-                    b.Property<TimeSpan>("AverageDailyHours")
-                        .HasColumnType("time");
-
-                    b.Property<double>("ConsistencyTime")
-                        .HasColumnType("float");
-
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("GeneratedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("LeaveTaken")
-                        .HasColumnType("int");
-
-                    b.Property<double>("PerformanceRating")
-                        .HasColumnType("float");
-
-                    b.Property<DateOnly>("ReportDate")
-                        .HasColumnType("date");
-
-                    b.Property<TimeSpan>("TotalWorkedHours")
-                        .HasColumnType("time");
-
-                    b.HasKey("ReportId");
-
-                    b.HasIndex("DepartmentId");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.ToTable("ReportAnalyses");
                 });
 
             modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.Role", b =>
@@ -339,25 +297,6 @@ namespace EMS_Backend_Project.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.ReportAnalysis", b =>
-                {
-                    b.HasOne("EMS_Backend_Project.EMS.Domain.Entities.Department", "Department")
-                        .WithMany("Report")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("EMS_Backend_Project.EMS.Domain.Entities.Employee", "Employee")
-                        .WithMany("Report")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Department");
-
-                    b.Navigation("Employee");
-                });
-
             modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.TimeSheet", b =>
                 {
                     b.HasOne("EMS_Backend_Project.EMS.Domain.Entities.Employee", "Employee")
@@ -383,15 +322,11 @@ namespace EMS_Backend_Project.Migrations
             modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.Department", b =>
                 {
                     b.Navigation("Employees");
-
-                    b.Navigation("Report");
                 });
 
             modelBuilder.Entity("EMS_Backend_Project.EMS.Domain.Entities.Employee", b =>
                 {
                     b.Navigation("Leaves");
-
-                    b.Navigation("Report");
 
                     b.Navigation("TimeSheets");
                 });

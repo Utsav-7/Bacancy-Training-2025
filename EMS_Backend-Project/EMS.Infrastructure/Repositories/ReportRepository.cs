@@ -15,7 +15,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
         {
         }
 
-        public async Task<MonthlyWorkHoursReportDTO> GetMonthlyWorkHoursReportAsync(int employeeId, int month, int year)
+        public async Task<MonthlyWorkHoursReportDTO> GetMonthlyWorkHoursReportQuery(int employeeId, int month, int year)
         {
             // Calculate date range for the month
             DateOnly firstDayOfMonth = DateOnly.FromDateTime(new DateTime(year, month, 1));
@@ -68,7 +68,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return report;
         }
 
-        public async Task<ICollection<MonthlyWorkHoursReportDTO>> GetMonthlyReportOfAllEmployee(int month, int year)
+        public async Task<ICollection<MonthlyWorkHoursReportDTO>> GetMonthlyReportOfAllEmployeeQuery(int month, int year)
         {
             // Calculate date range for the month
             DateOnly firstDayOfMonth = DateOnly.FromDateTime(new DateTime(year, month, 1));
@@ -126,7 +126,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return reportList;
         }
 
-        public async Task<WeeklyWorkHoursReportDTO> GetWeeklyWorkHoursReportAsync(int employeeId, DateOnly chooseDate)
+        public async Task<WeeklyWorkHoursReportDTO> GetWeeklyWorkHoursReportQuery(int employeeId, DateOnly chooseDate)
         {
             DateOnly startOfWeek = chooseDate.AddDays(-(int)chooseDate.DayOfWeek + (int)DayOfWeek.Monday);
             DateOnly endOfWeek = startOfWeek.AddDays(6);
@@ -185,7 +185,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             };
         }
 
-        public async Task<ICollection<WeeklyWorkHoursReportDTO>> GetWeeklyReportOfAllEmployee(DateOnly chooseDate)
+        public async Task<ICollection<WeeklyWorkHoursReportDTO>> GetWeeklyReportOfAllEmployeeQuery(DateOnly chooseDate)
         {
             DateOnly startOfWeek = chooseDate.AddDays(-(int)chooseDate.DayOfWeek + (int)DayOfWeek.Monday);
             DateOnly endOfWeek = startOfWeek.AddDays(6);
@@ -250,11 +250,15 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
             return reportCollection;
         }
 
-        public async Task<ICollection<MonthlyWorkHoursReportDTO>> GetCustomReport(DateOnly startDate, DateOnly endDate)
+        public async Task<ICollection<MonthlyWorkHoursReportDTO>> GetCustomReportQuery(DateOnly startDate, DateOnly endDate)
         {
             // Calculate date range for the month
             DateOnly firstDate = startDate;
             DateOnly lastDate = endDate;
+
+            if (startDate > endDate)
+                throw new Exception("End Date must be the same as Start Date or greater than.");
+
 
             // Get all employees with related data
             var employees = await _context.Employees

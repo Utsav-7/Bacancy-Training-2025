@@ -70,7 +70,7 @@ namespace EMS_Backend_Project.Migrations
                     b.Property<DateOnly?>("RelievingDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("TeckStack")
+                    b.Property<string>("TechStack")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -106,7 +106,8 @@ namespace EMS_Backend_Project.Migrations
 
                     b.Property<string>("LeaveType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(250)
@@ -117,7 +118,8 @@ namespace EMS_Backend_Project.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("TotalDays")
                         .HasColumnType("int");
@@ -131,7 +133,7 @@ namespace EMS_Backend_Project.Migrations
 
                     b.ToTable("Leaves", t =>
                         {
-                            t.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Other')");
+                            t.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Others')");
 
                             t.HasCheckConstraint("CK_Leave_Status", "Status IN ('Pending', 'Approved', 'Rejected', 'Cancelled')");
                         });

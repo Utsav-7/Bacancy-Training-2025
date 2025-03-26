@@ -11,19 +11,22 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private readonly IReportRepository _reportRepository;
+        private readonly IReportService _reportService;
 
-        public ReportController(IReportRepository reportRepository)
+        public ReportController(IReportService reportService)
         {
-            _reportRepository = reportRepository;
+            _reportService = reportService;
         }
 
         [HttpGet("GetReportByWeekly")]
         public async Task<ActionResult> GetWeeklyReport(int employeeId, DateOnly Date)
         {
+            if (employeeId == null || Date == null)
+                return BadRequest("Data is required.");
+
             try
             {
-                var ReportList = await _reportRepository.GetWeeklyWorkHoursReportAsync(employeeId, Date);
+                var ReportList = await _reportService.GetWeeklyWorkHoursReportAsync(employeeId, Date);
                 return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)
@@ -43,9 +46,12 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpGet("GetReportByMonthly")]
         public async Task<ActionResult> GetMonthlyWorkHoursReportAsync(int employeeId, int month, int year)
         {
+            if (employeeId == null || month == null || year == null)
+                return BadRequest("Data is required.");
+
             try
             {
-                var ReportList = await _reportRepository.GetMonthlyWorkHoursReportAsync(employeeId, month, year);
+                var ReportList = await _reportService.GetMonthlyWorkHoursReportAsync(employeeId, month, year);
                 return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)
@@ -65,9 +71,12 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpGet("GetAllEmployeeReportByWeekly")]
         public async Task<ActionResult> GetWeeklyReportOfAll(DateOnly Date)
         {
+            if (Date == null)
+                return BadRequest("Data is required.");
+
             try
             {
-                var ReportList = await _reportRepository.GetWeeklyReportOfAllEmployee(Date);
+                var ReportList = await _reportService.GetWeeklyReportOfAllEmployeeAsync(Date);
                 return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)
@@ -87,9 +96,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpGet("GetAllEmployeeReportByMonthly")]
         public async Task<ActionResult> GetMonthlyWorkHoursReportOfAll(int month, int year)
         {
+            if (month == null || year == null)
+                return BadRequest("Data is required.");
             try
             {
-                var ReportList = await _reportRepository.GetMonthlyReportOfAllEmployee(month, year);
+                var ReportList = await _reportService.GetMonthlyReportOfAllEmployeeAsync(month, year);
                 return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)
@@ -109,9 +120,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpGet("GetCustomDateReport")]
         public async Task<ActionResult> GetCustomReport(DateOnly startDate, DateOnly endDate)
         {
+            if (startDate == null || endDate == null)
+                return BadRequest("Data is required.");
             try
             {
-                var ReportList = await _reportRepository.GetCustomReport(startDate, endDate);
+                var ReportList = await _reportService.GetCustomReportAsync(startDate, endDate);
                 return Ok(ReportList);
             }
             catch (DataNotFoundException<string> ex)

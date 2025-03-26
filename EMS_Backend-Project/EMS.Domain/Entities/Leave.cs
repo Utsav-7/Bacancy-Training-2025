@@ -16,26 +16,27 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
         public DateOnly StartDate { get; set; }
 
         [Required(ErrorMessage = "End Date is required.")]
+        [CustomValidation(typeof(Leave), nameof(ValidateStartAndEndDate))]
         public DateOnly EndDate { get; set; }
 
         public int TotalDays
         {
             get
             {
-                if (EndDate < StartDate) return 0;
-                return (EndDate.ToDateTime(TimeOnly.MinValue) - StartDate.ToDateTime(TimeOnly.MinValue)).Days + 1;
+                return (EndDate < StartDate) ? 0 : (EndDate.ToDateTime(TimeOnly.MinValue) - StartDate.ToDateTime(TimeOnly.MinValue)).Days + 1;
             }
-
-            set;
+            set { }
         }
 
         [Required(ErrorMessage = "Leave Type is required.")]
+        [StringLength(50, ErrorMessage = "Leave Type cannot exceed 50 characters.")]
         public string LeaveType { get; set; }
 
         [StringLength(250, ErrorMessage = "Reason cannot exceed 250 characters.")]
         public string? Reason { get; set; }
 
         [Required(ErrorMessage = "Leave Status is required.")]
+        [StringLength(20, ErrorMessage = "Status cannot exceed 20 characters.")]
         public string Status { get; set; }
 
         public DateTime AppliedAt { get; set; } = DateTime.UtcNow;
@@ -43,5 +44,16 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
 
         // Navigation Property
         public virtual Employee Employee { get; set; }
+
+        // Custom Validation for StartDate < EndDate
+        public static ValidationResult? ValidateStartAndEndDate(DateOnly endDate, ValidationContext context)
+        {
+            var instance = (Leave)context.ObjectInstance;
+            if (endDate < instance.StartDate)
+            {
+                return new ValidationResult("End Date must be later than or equal to Start Date.");
+            }
+            return ValidationResult.Success;
+        }
     }
 }

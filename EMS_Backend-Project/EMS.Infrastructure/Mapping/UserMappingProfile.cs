@@ -21,16 +21,18 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Mapping
                 .ForMember(dest => dest.UserId, opt => opt.Ignore())
                 .ForMember(dest => dest.User, opt => opt.Ignore());
 
-            // Mapping for Update Employee's profile
-            CreateMap<EmployeeUpdateDTO, User>()    
-                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Don't overwrite existing
-                 .ForMember(dest => dest.Password, opt => opt.Ignore())  // Don't overwrite existing
-                 .ForMember(dest => dest.Active, opt => opt.Ignore()) 
-                 .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+            // Map EmployeeUpdateDTO to User
+            CreateMap<EmployeeUpdateDTO, User>()
+                .ForMember(dest => dest.UserId, opt => opt.Ignore())  // Prevent ID updates
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Preserve creation date
+                .ForMember(dest => dest.Password, opt => opt.Ignore()) // Don't overwrite password
+                .ForMember(dest => dest.Employee, opt => opt.Ignore()); // Avoid circular dependency
 
+            // Map EmployeeUpdateDTO to Employee
             CreateMap<EmployeeUpdateDTO, Employee>()
-                .ForMember(dest => dest.UserId, opt => opt.Ignore())
-                .ForMember(dest => dest.User, opt => opt.Ignore());
+                .ForMember(dest => dest.EmployeeId, opt => opt.Ignore()) // Prevent ID updates
+                .ForMember(dest => dest.User, opt => opt.Ignore()); // Avoid circular mapping issues
+
         }
     }
 }

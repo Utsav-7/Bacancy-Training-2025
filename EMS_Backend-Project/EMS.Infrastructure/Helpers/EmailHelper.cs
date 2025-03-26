@@ -4,11 +4,11 @@ using EMS_Backend_Project.EMS.Application.Interfaces;
 
 namespace EMS_Backend_Project.EMS.Infrastructure.Services
 {
-    public class EmailService : IEmailService
+    public class EmailHelper : IEmailService
     {
         private readonly IConfiguration _configuration;
 
-        public EmailService(IConfiguration configuration)
+        public EmailHelper(IConfiguration configuration)
         {
             _configuration = configuration;
         }

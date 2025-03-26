@@ -9,7 +9,7 @@ namespace EMS_Backend_Project.EMS.Domain.Entities
         public int DepartmentId { get; set; }
 
         [Required(ErrorMessage = "Department Name is required.")]
-        [CustomStringLength(50)]
+        [StringLength(50, ErrorMessage = "Department Name cannot exceed 50 characters.")]
         public string DepartmentName { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

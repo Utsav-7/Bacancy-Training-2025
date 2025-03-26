@@ -21,9 +21,9 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Database
                         .HasIndex(u => u.Email)
                         .IsUnique();
 
-            // CHECK constraint for LeaveType
+            //// CHECK constraint for LeaveType
             modelBuilder.Entity<Leave>()
-                .ToTable(tb => tb.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Other')"));
+                .ToTable(tb => tb.HasCheckConstraint("CK_Leave_LeaveType", "LeaveType IN ('Sick Leave', 'Casual Leave', 'Vacation', 'Paid Leave', 'Maternity Leave', 'Paternity Leave','Unpaid Leave', 'Others')"));
 
             // CHECK constraint for LeaveStatus
             modelBuilder.Entity<Leave>()
@@ -63,20 +63,6 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Database
                 .WithOne(l => l.Employee)
                 .HasForeignKey(l => l.EmployeeId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            // One-to-Many: Employee ↔ ReportAnalysis
-            //modelBuilder.Entity<Employee>()
-            //    .HasMany(e => e.Report)
-            //    .WithOne(r => r.Employee)
-            //    .HasForeignKey(r => r.EmployeeId)
-            //    .OnDelete(DeleteBehavior.NoAction);
-
-            //// One-to-Many: Department ↔ ReportAnalysis
-            //modelBuilder.Entity<Department>()
-            //    .HasMany(d => d.Report)
-            //    .WithOne(r => r.Department)
-            //    .HasForeignKey(r => r.DepartmentId)
-            //    .OnDelete(DeleteBehavior.NoAction);
 
             // Data seeding for Role Table
             modelBuilder.Entity<Role>().HasData(

@@ -1,6 +1,6 @@
 ﻿namespace EMS_Backend_Project.EMS.Application.DTOs.TimeSheetDTOs
 {
-    public class EmployeeSheetDTO
+    public class GetEmployeeSheetDTO
     {
         public int TimeSheetId { get; set; }
         public int EmployeeId { get; set; }

@@ -14,11 +14,11 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
     public class AuthRepository : IAuthRepository
     {
         private readonly IAuthService _authService;
-        private readonly TokenService _tokenService;
+        private readonly JWTTokenHelper _tokenService;
         private readonly IEmailService _emailService;
         private static ConcurrentDictionary<string, string> _resetTokens = new ConcurrentDictionary<string, string>();
 
-        public AuthRepository(IAuthService authService, IEmailService emailService, TokenService tokenService)
+        public AuthRepository(IAuthService authService, IEmailService emailService, JWTTokenHelper tokenService)
         {
             _authService = authService;
             _emailService = emailService;
@@ -27,7 +27,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
 
         public async Task<string> LoginAsync(UserLoginDTO userLogin)
         {
-            var user = await _authService.GetUserByEmailAsync(userLogin.email);
+            var user = await _authService.GetUserByEmailAsync(userLogin.Email);
 
             if (user.Active == false)
                 throw new Exception("User is not Active.");
@@ -36,7 +36,7 @@ namespace EMS_Backend_Project.EMS.Infrastructure.Repositories
                 throw new DataNotFoundException<string>("USER NOT FOUND");
 
             var passwordHasher = new PasswordHasher<UserLoginDTO>();
-            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userLogin, user.Password, userLogin.password);
+            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(userLogin, user.Password, userLogin.Password);
 
             if (passwordVerificationResult == PasswordVerificationResult.Failed)
                 throw new Exception("Invalid email or password");

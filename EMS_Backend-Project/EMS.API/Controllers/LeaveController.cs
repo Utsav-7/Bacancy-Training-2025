@@ -13,11 +13,11 @@ namespace EMS_Backend_Project.EMS.API.Controllers
     [ApiController]
     public class LeaveController : ControllerBase
     {
-        private readonly ILeaveRepository _leaveRepository;
+        private readonly ILeaveService _leaveService;
 
-        public LeaveController(ILeaveRepository leaveRepository)
+        public LeaveController(ILeaveService leaveService)
         {
-            _leaveRepository = leaveRepository;
+            _leaveService = leaveService;
         }
 
         // Extract the logged-in user's ID from the JWT token   
@@ -32,7 +32,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         {
             try
             {
-                var leaveRecordsList = await _leaveRepository.GetAllLeaves();
+                var leaveRecordsList = await _leaveService.GetAllLeavesAsync();
 
                 return Ok(leaveRecordsList);
             }
@@ -58,7 +58,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                var leaveRecord = await _leaveRepository.GetLeaveByID(id);
+                var leaveRecord = await _leaveService.GetLeaveByIDAsync(id);
 
                 return Ok(leaveRecord);
             }
@@ -79,13 +79,13 @@ namespace EMS_Backend_Project.EMS.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(LeaveDTO leave)
         {
-            if (leave == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
                 var employeeId = GetLoggedInUserId();
-                await _leaveRepository.AddLeave(employeeId, leave);
+                await _leaveService.AddLeaveAsync(employeeId, leave);
 
                 return Ok("Leave record created Successfully.");
             }
@@ -105,12 +105,12 @@ namespace EMS_Backend_Project.EMS.API.Controllers
             if (id <= 0)
                 return BadRequest("Invalid ID. It must be a positive number.");
 
-            if (leave == null)
-                return BadRequest("Data is required.");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             try
             {
-                await _leaveRepository.UpdateLeave(id, leave);
+                await _leaveService.UpdateLeaveAsync(id, leave);
 
                 return Ok("Leave record updated Successfully.");
             }
@@ -136,7 +136,7 @@ namespace EMS_Backend_Project.EMS.API.Controllers
 
             try
             {
-                await _leaveRepository.DeleteLeave(id);
+                await _leaveService.DeleteLeaveAsync(id);
 
                 return Ok("Leave record deleted Successfully.");
             }
