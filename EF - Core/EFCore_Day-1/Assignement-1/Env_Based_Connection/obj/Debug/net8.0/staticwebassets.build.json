@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "sPPzsB3qdGzTjZr1pX890x0Bd750LHvJeNi26pySyxw=",
+  "Source": "Env_Based_Connection",
+  "BasePath": "_content/Env_Based_Connection",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
